@@ -193,11 +193,11 @@ body {
 #link{
     display: flex;
     margin-bottom: 30px;
-    color: teal;
+    color: blue;
 }
 .hours
 {
-    color: teal;
+    color: blue;
     font-size: 20px;
     display: block;
     padding-bottom: 20px;
@@ -205,7 +205,7 @@ body {
 
 .Hours-header
 {
-    color: teal;
+    color: blue;
     padding-bottom: 30px;
 }
 
