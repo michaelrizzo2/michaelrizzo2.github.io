@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Michael Rizzo — AI automation and software engineering portfolio. Explore shop operations, listing evaluation, job matching, and paper-trading project plans.">
+        content="Michael Rizzo — AI automation and software engineering portfolio. Explore interactive repair workflows, listing scoring, job ranking, and strategy evaluation with public source code.">
     <meta name="author" content="Michael Rizzo">
     <title>Michael Rizzo | AI Engineering Portfolio</title>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261013">
+    <link rel="stylesheet" href="style.css?v=20261013-interactive-1">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -18,7 +18,7 @@
 
 <body>
     <a class="skip-link" href="#projects">Skip to projects</a>
-    <header class="site-nav container"><a class="wordmark" href="#">MR<span> / engineering</span></a><nav aria-label="Main"><a href="#projects">Work</a><a href="#automation">Automation</a><a href="#contact">Contact</a></nav></header>
+    <header class="site-nav container"><a class="wordmark" href="#">MR<span> / engineering</span></a><nav aria-label="Main"><a href="#projects">Work</a><a href="#automation">Demos</a><a href="#contact">Contact</a></nav></header>
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
@@ -26,14 +26,14 @@
                 <h1 class="hero-title">Michael Rizzo</h1>
                 <p class="hero-subtitle">AI Automation · Software Engineering</p>
                 <p class="hero-description">
-                    Python tools. Practical automation. Thoughtful engineering.<br>
+                    Python automation. Inspectable decisions. Human approval.<br>
                     I’m focused on AI automation and engineering opportunities, building on hands-on
                     work in shop operations, desktop applications, and Linux tooling.
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
                         <i class="fas fa-code"></i>
-                        View Projects
+                        Explore the Work
                     </a>
                     <a href="#contact" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i>
@@ -58,15 +58,46 @@
         </div>
     </section>
 
-    <section id="projects"><div class="container"><div class="section-header"><p class="eyebrow">AI automation portfolio · public repositories coming next</p><h2 class="section-title">Practical AI, grounded in real workflows</h2><p class="section-description">Four case studies I’m preparing for publication. The TypeSafe enhancements below are planned; repository links, demos, and evaluation results will appear as each project is published.</p></div><div class="projects-grid"><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>multi-agent-shop-ops</code></p><h3 class="project-title">Shop operations, connected through real APIs</h3><p>A planned public case study of the AI agent workflows I use to run a computer repair business: bookkeeping, parts sourcing, email, scheduling, and pricing.</p><div class="project-tech"><span class="tech-badge">MCP · Python · API integrations</span></div><h4>Planned TypeSafe enhancement</h4><p>Route incoming requests with TypeSafe Choice judgments; evaluate urgency and missing information independently; hand uncertain cases to a person.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Architecture diagram, redacted workflow examples, connector boundaries, and measured token cost.</p></details></article><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>ai-listing-scorer</code></p><h3 class="project-title">Turn marketplace listings into useful decisions</h3><p>A planned public repository for comparing eBay and Facebook Marketplace listings using structured judgments, landed-cost calculations, and report generation.</p><div class="project-tech"><span class="tech-badge">Python · eBay Browse API · Structured judgments</span></div><h4>Planned TypeSafe enhancement</h4><p>Score relevance and condition separately, flag missing evidence, and keep landed-cost and profit calculations in Python.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Example listings, scoring criteria, reproducible cost calculations, and evaluation cases.</p></details></article><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>ai-job-hunt-app</code></p><h3 class="project-title">Make the job search more focused</h3><p>An in-progress project to collect real job posts and rank opportunities for AI automation and engineering work.</p><div class="project-tech"><span class="tech-badge">Python · Job data · Weighted scoring</span></div><h4>Planned TypeSafe enhancement</h4><p>Score skills, responsibilities, and preferences separately. Combine them with adjustable weights in code and show the evidence behind each result.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Source job links, transparent fit dimensions, labeled examples, and a reproducible evaluation.</p></details></article><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>eth17-trading-gate</code></p><h3 class="project-title">Evaluate a strategy before paper trading</h3><p>A planned public case study of an ETH paper-trading evaluation gate for Kraken, with feature engineering, backtests, an evaluation runner, and smoke tests.</p><div class="project-tech"><span class="tech-badge">Python · Kraken API · Backtesting</span></div><h4>Planned TypeSafe enhancement</h4><p>Keep execution gates and risk rules in deterministic code. Explore typed checks for evidence completeness and send uncertain inputs for review.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Reproducible backtests, test cases, clear paper-trading scope, and results with limitations.</p></details></article></div></div></section>
-    <section id="approach"><div class="container"><div class="section-header"><p class="eyebrow">Proposed architecture</p><h2 class="section-title">Small AI judgments. Clear engineering decisions.</h2><p class="section-description">TypeSafe supplies typed judgments about language and context. Python owns API calls, calculations, workflow rules, and the decision to request human review.</p></div><div class="projects-grid"><article class="project-card"><h3 class="project-title">Route with Choice</h3><p>Select a known workflow, with an explicit no-match outcome. Keep permission checks separate from model confidence.</p><a href="https://docs.typesafe.ai/patterns/intent-routing">Read the routing pattern →</a></article><article class="project-card"><h3 class="project-title">Rank with Score</h3><p>Evaluate independent dimensions together, then combine results with visible weights in code. Changing preferences changes the ranking.</p><a href="https://docs.typesafe.ai/patterns/composite-scoring">Read the scoring pattern →</a></article><article class="project-card"><h3 class="project-title">Check with Noul</h3><p>Estimate whether a specific condition holds, such as missing information. Validate review thresholds using representative examples before automating a workflow.</p><a href="https://docs.typesafe.ai/primitives">Explore typed judgments →</a></article></div></div></section>
+    <section id="projects"><div class="container"><div class="section-header"><p class="eyebrow">Selected work · source code + interactive demos</p><h2 class="section-title">Practical automation you can explore</h2><p class="section-description">Four engineering case studies with public Python implementations, tests and browser demonstrations. Try the decisions, inspect the calculations and explore the code.</p></div><div class="projects-grid"><article class="project-card featured-card">
+  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Repair shop operations</h3>
+  <p>Turn a charging request into a compatible inventory lookup, an itemized estimate and a reviewed next step.</p><div class="project-tech"><span class="tech-badge">Python · FastAPI · Approval boundaries</span></div>
+  <p class="project-proof">6 Python tests · documented source</p>
+  <div class="project-actions"><a class="btn btn-primary" href="#demo-repair" data-demo-link="repair">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/ai-repair-shop-operations-demo" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
+  <details><summary>What to explore</summary><p>Try missing information, unavailable inventory or a tool failure. Watch the workflow stop safely before a fictional booking.</p><a href="https://github.com/michaelrizzo2/ai-repair-shop-operations-demo/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
+ </article><article class="project-card featured-card">
+  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Marketplace listing intelligence</h3>
+  <p>Compare relevance, condition and evidence alongside landed cost and potential resale profit.</p><div class="project-tech"><span class="tech-badge">Python · Weighted scoring · Integer-cent pricing</span></div>
+  <p class="project-proof">5 Python tests · documented source</p>
+  <div class="project-actions"><a class="btn btn-primary" href="#demo-listings" data-demo-link="listings">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/ai-listing-scorer" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
+  <details><summary>What to explore</summary><p>Adjust the relevance weight. See how incomplete evidence remains visible even when a listing ranks highly.</p><a href="https://github.com/michaelrizzo2/ai-listing-scorer/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
+ </article><article class="project-card featured-card">
+  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Job opportunity ranking</h3>
+  <p>Rank opportunities using separate skills, responsibilities and preference dimensions, with visible reasons.</p><div class="project-tech"><span class="tech-badge">Python · Fit dimensions · Adjustable weights</span></div>
+  <p class="project-proof">4 Python tests · documented source</p>
+  <div class="project-actions"><a class="btn btn-primary" href="#demo-jobs" data-demo-link="jobs">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/ai-job-hunt-app" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
+  <details><summary>What to explore</summary><p>Move the technical-fit weight or filter for remote roles. Every displayed opportunity is fictional.</p><a href="https://github.com/michaelrizzo2/ai-job-hunt-app/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
+ </article><article class="project-card featured-card">
+  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Strategy evaluation gate</h3>
+  <p>Inspect an illustrative backtest with causal signals, fees, drawdown and explicit evidence requirements.</p><div class="project-tech"><span class="tech-badge">Python · Backtesting · Deterministic gates</span></div>
+  <p class="project-proof">5 Python tests · documented source</p>
+  <div class="project-actions"><a class="btn btn-primary" href="#demo-trading" data-demo-link="trading">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/eth17-trading-gate" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
+  <details><summary>What to explore</summary><p>Change the synthetic market regime and fees. Missing provenance and holdout evidence keep the experiment blocked.</p><a href="https://github.com/michaelrizzo2/eth17-trading-gate/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
+ </article></div><p class="portfolio-disclosure">Public demos use fictional data and deterministic logic. No live AI model is called, and no customer records, applications or exchange orders are accessed.</p></div></section>
+
+<section id="automation"><div class="container">
+ <div class="section-header"><p class="eyebrow">Explore the work</p><h2 class="section-title">Try a workflow. Inspect the result.</h2><p class="section-description">Switch projects and change the inputs. These browser demonstrations mirror the core decision rules in the Python repositories.</p></div>
+ <div class="demo-tabs" role="group" aria-label="Select an interactive project"><button type="button" data-demo-tab="repair" aria-pressed="true">01 / Repair desk</button><button type="button" data-demo-tab="listings" aria-pressed="false">02 / Listings</button><button type="button" data-demo-tab="jobs" aria-pressed="false">03 / Job fit</button><button type="button" data-demo-tab="trading" aria-pressed="false">04 / Trading gate</button></div>
+ <div class="demo-workspace"><div class="demo-controls"><p class="eyebrow">Your inputs</p><h3 id="demo-title">Repair intake → reviewed next step</h3><p id="demo-help">Choose a request and inspect the result.</p><label id="demo-input-label" for="demo-scenario">Fictional request</label><select id="demo-scenario"></select><div id="demo-weight-controls" hidden><label id="demo-weight-label" for="demo-weight">Weight</label><input id="demo-weight" type="range" min="0" max="100" step="1" value="50"><output id="demo-weight-value" for="demo-weight">50</output></div><button class="btn btn-primary" id="run-demo" type="button">Run the demo →</button><p class="demo-note">Synthetic data · browser-only execution · no model calls or real actions.</p><a id="demo-source" href="https://github.com/michaelrizzo2/ai-repair-shop-operations-demo" target="_blank" rel="noopener noreferrer">View source code ↗</a></div><div class="demo-output" id="demo-result" role="status" aria-live="polite" aria-atomic="false"><h3>Ready to explore</h3><p>The result will appear here. Enable JavaScript to run the browser demos.</p></div></div>
+ <noscript><p class="portfolio-disclosure">JavaScript is required for these interactive demos. All four source-code links above remain available.</p></noscript>
+ </div></section>
+<section id="approach"><div class="container"><div class="section-header"><p class="eyebrow">Engineering decisions</p><h2 class="section-title">Clear rules. Visible evidence. Reviewed actions.</h2></div><div class="projects-grid"><article class="project-card"><h3 class="project-title">Keep calculations in code</h3><p>Pricing uses integer cents. Ranking weights are visible. Trading signals use past observations and account for the selected fees.</p></article><article class="project-card"><h3 class="project-title">Make uncertainty visible</h3><p>Missing device models stop estimates. Incomplete listing and job evidence stays visible. Synthetic market results cannot pass the evidence gate.</p></article><article class="project-card"><h3 class="project-title">Test the action boundaries</h3><p>The Python repair workflow binds approval to an expiring session and the current proposal. The public browser demo illustrates that review step with a fictional action.</p></article></div><details class="integration-note"><summary>AI architecture and TypeSafe</summary><p>These workflows separate semantic judgments from calculations and permissions. TypeSafe Choice, Score and Noul can supply routing, fit and evidence judgments through a server-side adapter. The published demonstrations use deterministic rules and preset judgments; live inference is not connected here.</p><a href="https://docs.typesafe.ai/patterns/composite-scoring" target="_blank" rel="noopener noreferrer">Read the structured-judgment pattern ↗</a></details></div></section>
     <!-- Projects Section -->
     <section id="systems">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Systems engineering foundation</h2>
                 <p class="section-description">
-                    Systems and desktop projects from my existing portfolio. Public AI case studies will be added as their code and results are ready.
+                    The desktop and Linux work behind my approach to practical automation.
                 </p>
             </div>
 
@@ -175,10 +206,7 @@
         </div>
     </section>
 
-    <section id="automation"><div class="container">
-      <div class="section-header"><p class="eyebrow">Interactive example · illustrative data</p><h2 class="section-title">From request to next action</h2><p class="section-description">Try a small workflow-routing demo. It shows how an automation can prepare a routine next step and send sensitive requests to a human.</p></div>
-      <div class="workflow"><div><label for="request-type">Choose an incoming request</label><select id="request-type"><option value="invoice">Please send a copy of my invoice</option><option value="access">I can’t sign in to my account</option><option value="refund">I want to request a refund</option></select><button class="btn btn-primary" id="run-workflow" type="button">Run example workflow →</button><p class="demo-note">A browser-only, rule-based demonstration. No AI model is called and no messages are sent.</p></div><div class="workflow-result" role="status" aria-live="polite"><p class="eyebrow">Workflow output</p><h3 id="route-title">Ready to route</h3><p id="route-detail">Choose a request, then run the example.</p><ol><li>Receive request</li><li>Determine next step</li><li>Prepare draft or human review</li></ol></div></div>
-    </div></section>
+
     <!-- Skills Section -->
     <section id="skills">
         <div class="container">
@@ -203,6 +231,7 @@
                 <div class="skill-category reveal">
                     <h3>Frameworks & Libraries</h3>
                     <div class="skill-tags">
+                        <span class="skill-tag">FastAPI</span>
                         <span class="skill-tag">PySide6/Qt</span>
                         <span class="skill-tag">KDE Plasma</span>
                         <span class="skill-tag">psutil</span>
@@ -216,6 +245,8 @@
                         <span class="skill-tag">System Programming</span>
                         <span class="skill-tag">Desktop Environments</span>
                         <span class="skill-tag">Power Management</span>
+                        <span class="skill-tag">API Workflows</span>
+                        <span class="skill-tag">Validation &amp; Testing</span>
                         <span class="skill-tag">Automation</span>
                         <span class="skill-tag">UI/UX Design</span>
                         <span class="skill-tag">Fluent Design</span>
@@ -270,7 +301,8 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js?v=20261013"></script>
+    <script src="demo-engine.js?v=20261013-interactive-1"></script>
+    <script src="script.js?v=20261013-interactive-1"></script>
 </body>
 
 </html>
