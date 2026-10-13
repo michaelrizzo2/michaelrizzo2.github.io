@@ -562,3 +562,14 @@ footer p {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Portfolio navigation and workflow */
+.site-nav{display:flex;justify-content:space-between;align-items:center;padding-top:24px;padding-bottom:24px;border-bottom:1px solid var(--glass-border)}
+.wordmark{font-weight:700;color:white}.wordmark span{font-weight:400;color:#b7b7c5}.site-nav nav{display:flex;gap:24px}.site-nav nav a{color:#dddde7}
+.hero{min-height:72vh}.hero-title{font-size:clamp(3.5rem,8vw,6.5rem);letter-spacing:-.06em}.hero-subtitle{color:#c4b5fd;letter-spacing:.05em}
+.eyebrow{text-transform:uppercase;letter-spacing:.13em;font-size:.78rem;color:#a8d9ec;font-weight:600}
+.workflow{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:36px;border:1px solid var(--glass-border);border-radius:24px;background:var(--glass-bg)}
+.workflow label{display:block;margin-bottom:12px;font-weight:600}.workflow select{display:block;width:100%;padding:16px;margin-bottom:20px;border:1px solid #626276;background:#171722;color:#fff;border-radius:10px;font:inherit}.workflow .btn{font-size:1rem;padding:14px 20px}.demo-note{font-size:.85rem;margin-top:18px}.workflow-result{padding:24px;background:#0c0c14;border-radius:14px}.workflow-result h3{font-size:1.5rem}.workflow-result ol{padding-left:20px;color:#bdbdcb;line-height:2}
+.skip-link{position:absolute;left:16px;top:-80px;padding:12px;background:white;color:#111;z-index:10}.skip-link:focus{top:12px}:focus-visible{outline:3px solid #67e8f9;outline-offset:5px}.reveal{opacity:1;transform:none}.hero-description,.hero-subtitle,.cta-buttons{opacity:1}
+@media(max-width:650px){.workflow{grid-template-columns:1fr;padding:20px;gap:20px}.site-nav{gap:16px;align-items:flex-start}.wordmark span{display:none}.site-nav nav{gap:16px;font-size:.9rem}.container{padding-left:20px;padding-right:20px}.hero{min-height:65vh}.project-features-container{grid-template-columns:1fr!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}section{opacity:1;transform:none}}
