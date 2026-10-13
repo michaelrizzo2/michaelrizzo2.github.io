@@ -1,10 +1,35 @@
-const routes = {
-  invoice: ['Billing · prepare a draft', 'Look up the invoice through an authorized billing integration, then prepare a reply for review. This demo does not access billing data.'],
-  access: ['Account access · human review', 'Send the request to the support team. Identity verification and account changes require an authorized process.'],
-  refund: ['Refund request · human review', 'Prepare the request context for a person to review against the refund policy. No payment action is performed.']
+'use strict';
+const projects={
+repair:{title:'Repair intake → reviewed next step',slug:'ai-repair-shop-operations-demo',label:'Fictional request',options:[['charging','Known model · charging issue'],['missing_model','Missing model · clarification'],['no_stock','Compatible part out of stock'],['unsupported','Unsupported account request'],['tool_failure','Simulated inventory failure']],weight:null,steps:'Choose a request, inspect the estimate, then approve a fictional booking.'},
+listings:{title:'Evidence + landed cost',slug:'ai-listing-scorer',label:'Listing filter',options:[['all','Compare all listings'],['tested_only','Complete evidence only'],['missing_evidence','Incomplete evidence']],weight:'Relevance weight (%) · remainder goes to condition',value:50,steps:'Compare listings and change the relevance weight to see the tradeoffs.'},
+jobs:{title:'Opportunities, ranked with reasons',slug:'ai-job-hunt-app',label:'Opportunity filter',options:[['all','All fictional opportunities'],['remote','Remote roles only'],['automation','Automation role only']],weight:'Technical fit (%) · remainder goes to preferences',value:70,steps:'Change technical-fit weight to see which opportunity rises to the top.'},
+trading:{title:'Evidence before paper trading',slug:'eth17-trading-gate',label:'Synthetic price regime',options:[['trending','Upward trend'],['choppy','Choppy sideways market'],['declining','Downward trend']],weight:'Fee per side (basis points)',value:26,steps:'Run the illustrative backtest and inspect which evidence gates fail.'}
 };
-document.getElementById('run-workflow').addEventListener('click', () => {
-  const [title, detail] = routes[document.getElementById('request-type').value];
-  document.getElementById('route-title').textContent = title;
-  document.getElementById('route-detail').textContent = detail;
-});
+const $=id=>document.getElementById(id);let active='repair',proposalVersion=0;
+function el(tag,text,cls){const n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n;}
+function money(cents){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(cents/100);}
+function metric(parent,label,value){const m=el('div',null,'demo-metric');m.append(el('strong',value),el('span',label));parent.append(m);}
+function chart(series,parent){const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 600 150');svg.setAttribute('role','img');svg.setAttribute('aria-label','Illustrative synthetic equity curve after selected fees');const min=Math.min(...series),max=Math.max(...series),range=Math.max(max-min,1),line=document.createElementNS(ns,'polyline');line.setAttribute('points',series.map((v,i)=>`${i/(series.length-1)*590+5},${140-(v-min)/range*130}`).join(' '));line.setAttribute('fill','none');line.setAttribute('stroke','#67e8f9');line.setAttribute('stroke-width','3');svg.append(line);parent.append(svg,el('p','Synthetic equity curve · illustrative behavior only','demo-note'));}
+function showResult(result,version){
+const out=$('demo-result');out.replaceChildren();out.append(el('p',result.mode+' · synthetic data','eyebrow'));
+if(result.kind==='repair'){
+out.append(el('h3',result.title),el('p',result.message));const steps=el('ol',null,'demo-events');result.events.forEach(s=>steps.append(el('li',s)));out.append(steps);
+if(result.estimate){const metrics=el('div',null,'demo-metrics');metric(metrics,'Provisional total',money(result.estimate.total_cents));metric(metrics,'Next step','Human approval');out.append(metrics);result.estimate.lines.forEach(l=>out.append(el('div',l.label+' · '+money(l.cents),'demo-line')));const approve=el('button','Approve fictional booking','btn btn-primary');approve.type='button';approve.addEventListener('click',()=>{if(version!==proposalVersion||active!=='repair')return;approve.disabled=true;approve.remove();out.append(el('p','Fictional booking approved for Tuesday, 10:00. No real appointment, message or payment was created.','demo-success'));});out.append(approve);}
+}else if(result.kind==='gate'){
+out.append(el('h3',result.allowed?'Ready for review':'Evidence gate blocked'),el('p',result.message));const metrics=el('div',null,'demo-metrics');metric(metrics,'Illustrative net return',result.metrics.net_return_pct.toFixed(2)+'%');metric(metrics,'Maximum drawdown',result.metrics.max_drawdown_pct.toFixed(2)+'%');metric(metrics,'Completed trades',String(result.metrics.trades));out.append(metrics);chart(result.metrics.equity_curve,out);result.checks.forEach(c=>out.append(el('div',(c.passed?'PASS · ':'BLOCK · ')+c.label,'demo-line '+(c.passed?'demo-success':'demo-warning'))));out.append(el('p',result.strategy,'demo-note'));
+}else{
+out.append(el('h3','Ranked results'),el('p',result.message));result.items.forEach((item,i)=>{const row=el('article',null,'demo-ranked');row.append(el('p',`${i+1} / ${item.score.toFixed(1)} out of 100`,'eyebrow'),el('h4',item.title),el('p',item.reason));if(item.landed_cents!=null){const metrics=el('div',null,'demo-metrics');metric(metrics,'Landed cost',money(item.landed_cents));metric(metrics,'Potential net',money(item.profit_cents));row.append(metrics);}Object.entries(item.dimensions).forEach(([name,value])=>{const bar=el('div',null,'demo-dimension');bar.append(el('span',name+' · '+Math.round(value*100)+'%'));const progress=el('progress');progress.max=1;progress.value=value;progress.setAttribute('aria-label',name+' judgment');bar.append(progress);row.append(bar);});if(item.flags.length)row.append(el('p','Review: '+item.flags.join('; '),'demo-warning'));out.append(row);});
+}
+const detail=el('details',null,'demo-details');detail.append(el('summary','Inspect the structured result'));const display=JSON.parse(JSON.stringify(result));if(display.metrics)delete display.metrics.equity_curve;detail.append(el('pre',JSON.stringify(display,null,2)));out.append(detail);
+}
+function run(){proposalVersion++;try{showResult(PortfolioDemo.run(active,$('demo-scenario').value,Number($('demo-weight').value)),proposalVersion);}catch(error){$('demo-result').replaceChildren(el('p',error.message,'demo-warning'));}}
+function select(project,updateHash=false){
+if(!projects[project])return;active=project;proposalVersion++;const cfg=projects[project];document.querySelectorAll('[data-demo-tab]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.demoTab===project)));
+$('demo-title').textContent=cfg.title;$('demo-input-label').textContent=cfg.label;$('demo-help').textContent=cfg.steps;$('demo-source').href='https://github.com/michaelrizzo2/'+cfg.slug;$('demo-source').textContent='View '+cfg.slug+' source ↗';
+$('demo-scenario').replaceChildren();cfg.options.forEach(([value,label])=>{const o=el('option',label);o.value=value;$('demo-scenario').append(o);});$('demo-weight-controls').hidden=!cfg.weight;if(cfg.weight){$('demo-weight-label').textContent=cfg.weight;$('demo-weight').value=cfg.value;$('demo-weight-value').textContent=cfg.value;}
+if(updateHash)history.replaceState(null,'','#demo-'+project);run();
+}
+document.querySelectorAll('[data-demo-tab]').forEach(b=>b.addEventListener('click',()=>select(b.dataset.demoTab,true)));
+document.querySelectorAll('[data-demo-link]').forEach(a=>a.addEventListener('click',event=>{event.preventDefault();select(a.dataset.demoLink,true);$('automation').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}));
+$('run-demo').addEventListener('click',run);$('demo-scenario').addEventListener('change',run);$('demo-weight').addEventListener('input',()=>{$('demo-weight-value').textContent=$('demo-weight').value;run();});
+function fromHash(){const id=location.hash.replace('#demo-','');if(projects[id]){select(id);$('automation').scrollIntoView({behavior:'instant',block:'start'});}}window.addEventListener('hashchange',fromHash);select('repair');if(location.hash.startsWith('#demo-'))fromHash();
