@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Michael Rizzo — AI automation and software engineering portfolio. Explore systems projects, an interactive workflow demo, and contact information.">
+        content="Michael Rizzo — AI automation and software engineering portfolio. Explore shop operations, listing evaluation, job matching, and paper-trading project plans.">
     <meta name="author" content="Michael Rizzo">
     <title>Michael Rizzo | AI Engineering Portfolio</title>
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20261013">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -28,7 +28,7 @@
                 <p class="hero-description">
                     Python tools. Practical automation. Thoughtful engineering.<br>
                     I’m focused on AI automation and engineering opportunities, building on hands-on
-                    work in desktop applications, system monitoring, and Linux tooling.
+                    work in shop operations, desktop applications, and Linux tooling.
                 </p>
                 <div class="cta-buttons">
                     <a href="#projects" class="btn btn-primary">
@@ -50,19 +50,21 @@
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
                 <p class="section-description">
-                    My foundation is making software useful: turning system data into readable interfaces,
-                    giving users control over their tools, and automating repetitive steps.
-                    This portfolio brings that work together as I develop my AI engineering practice.
+                    I run a computer repair business in South Florida and use a team of AI agents for
+                    bookkeeping, parts sourcing, email, scheduling, and pricing through real APIs.
+                    I’m now looking for an AI automation or AI agent engineering role.
                 </p>
             </div>
         </div>
     </section>
 
+    <section id="projects"><div class="container"><div class="section-header"><p class="eyebrow">AI automation portfolio · public repositories coming next</p><h2 class="section-title">Practical AI, grounded in real workflows</h2><p class="section-description">Four case studies I’m preparing for publication. The TypeSafe enhancements below are planned; repository links, demos, and evaluation results will appear as each project is published.</p></div><div class="projects-grid"><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>multi-agent-shop-ops</code></p><h3 class="project-title">Shop operations, connected through real APIs</h3><p>A planned public case study of the AI agent workflows I use to run a computer repair business: bookkeeping, parts sourcing, email, scheduling, and pricing.</p><div class="project-tech"><span class="tech-badge">MCP · Python · API integrations</span></div><h4>Planned TypeSafe enhancement</h4><p>Route incoming requests with TypeSafe Choice judgments; evaluate urgency and missing information independently; hand uncertain cases to a person.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Architecture diagram, redacted workflow examples, connector boundaries, and measured token cost.</p></details></article><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>ai-listing-scorer</code></p><h3 class="project-title">Turn marketplace listings into useful decisions</h3><p>A planned public repository for comparing eBay and Facebook Marketplace listings using structured judgments, landed-cost calculations, and report generation.</p><div class="project-tech"><span class="tech-badge">Python · eBay Browse API · Structured judgments</span></div><h4>Planned TypeSafe enhancement</h4><p>Score relevance and condition separately, flag missing evidence, and keep landed-cost and profit calculations in Python.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Example listings, scoring criteria, reproducible cost calculations, and evaluation cases.</p></details></article><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>ai-job-hunt-app</code></p><h3 class="project-title">Make the job search more focused</h3><p>An in-progress project to collect real job posts and rank opportunities for AI automation and engineering work.</p><div class="project-tech"><span class="tech-badge">Python · Job data · Weighted scoring</span></div><h4>Planned TypeSafe enhancement</h4><p>Score skills, responsibilities, and preferences separately. Combine them with adjustable weights in code and show the evidence behind each result.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Source job links, transparent fit dimensions, labeled examples, and a reproducible evaluation.</p></details></article><article class="project-card"><p class="eyebrow">Repository planned</p><p><code>eth17-trading-gate</code></p><h3 class="project-title">Evaluate a strategy before paper trading</h3><p>A planned public case study of an ETH paper-trading evaluation gate for Kraken, with feature engineering, backtests, an evaluation runner, and smoke tests.</p><div class="project-tech"><span class="tech-badge">Python · Kraken API · Backtesting</span></div><h4>Planned TypeSafe enhancement</h4><p>Keep execution gates and risk rules in deterministic code. Explore typed checks for evidence completeness and send uncertain inputs for review.</p><details><summary>Proof of work to publish</summary><p style="margin-top:1rem">Reproducible backtests, test cases, clear paper-trading scope, and results with limitations.</p></details></article></div></div></section>
+    <section id="approach"><div class="container"><div class="section-header"><p class="eyebrow">Proposed architecture</p><h2 class="section-title">Small AI judgments. Clear engineering decisions.</h2><p class="section-description">TypeSafe supplies typed judgments about language and context. Python owns API calls, calculations, workflow rules, and the decision to request human review.</p></div><div class="projects-grid"><article class="project-card"><h3 class="project-title">Route with Choice</h3><p>Select a known workflow, with an explicit no-match outcome. Keep permission checks separate from model confidence.</p><a href="https://docs.typesafe.ai/patterns/intent-routing">Read the routing pattern →</a></article><article class="project-card"><h3 class="project-title">Rank with Score</h3><p>Evaluate independent dimensions together, then combine results with visible weights in code. Changing preferences changes the ranking.</p><a href="https://docs.typesafe.ai/patterns/composite-scoring">Read the scoring pattern →</a></article><article class="project-card"><h3 class="project-title">Check with Noul</h3><p>Estimate whether a specific condition holds, such as missing information. Validate review thresholds using representative examples before automating a workflow.</p><a href="https://docs.typesafe.ai/primitives">Explore typed judgments →</a></article></div></div></section>
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="systems">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Selected engineering work</h2>
+                <h2 class="section-title">Systems engineering foundation</h2>
                 <p class="section-description">
                     Systems and desktop projects from my existing portfolio. Public AI case studies will be added as their code and results are ready.
                 </p>
@@ -254,6 +256,7 @@
                         <i class="fas fa-envelope contact-icon"></i>
                         <span>Email</span>
                     </a>
+                    <a href="https://www.linkedin.com/in/michael-rizzo-1559883a2" class="contact-link" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span></a>
                 </div>
             </div>
         </div>
@@ -267,7 +270,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script src="script.js?v=20261013"></script>
 </body>
 
 </html>
