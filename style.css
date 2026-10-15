@@ -581,3 +581,6 @@ footer p {
 
 /* Evidence controls */
 .demo-controls textarea,.demo-controls input:not([type=range]){width:100%;padding:.8rem;background:#131724;color:#eef0ff;border:1px solid #414759;border-radius:10px;font:inherit;box-sizing:border-box}.demo-controls textarea{resize:vertical}.demo-controls details{margin:1rem 0}.demo-controls input,.demo-controls select{margin-bottom:.6rem}.demo-ranked details{margin:.8rem 0}.demo-output svg{width:100%;height:auto}.demo-ranked h4{overflow-wrap:anywhere}.demo-details pre{max-height:360px;overflow:auto}.demo-metrics{flex-wrap:wrap}.demo-controls button:disabled{opacity:.6;cursor:wait}section{opacity:1!important;animation:none!important} [hidden]{display:none!important}
+
+/* Allow resume navigation to wrap on small screens. */
+.site-nav nav{flex-wrap:wrap;justify-content:flex-end}.site-nav nav a{white-space:nowrap}@media(max-width:380px){.site-nav nav{gap:10px;font-size:.85rem}}
