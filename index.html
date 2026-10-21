@@ -26,7 +26,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261021-brand">
+    <link rel="stylesheet" href="style.css?v=20261021-final">
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -43,7 +43,7 @@
             <a href="#shop">Shop</a>
             <a href="#proof">Proof</a>
             <a href="#videos">Videos</a>
-            <a href="#projects">Work</a>
+            <a href="#automation">Demos</a>
             <a href="resume.html">Résumé</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -54,6 +54,11 @@
             <div class="hero-content">
                 <h1 class="hero-title">I build AI bots that run my repair shop. <span class="hero-accent">I'll build yours.</span></h1>
                 <p class="hero-subtitle">Michael Rizzo · Michael's Computer Repair Service, Davie, FL · 4.8★ from 71 Google reviews. Practical AI automation with human approval.</p>
+                <ul class="hero-outcomes">
+                    <li><strong>Quotes and parts lookups in minutes</strong> instead of an evening of searching.</li>
+                    <li><strong>Every cost shown to the cent</strong> before you buy a part or send an estimate.</li>
+                    <li><strong>Appointments, payments, and email sorted automatically</strong> — nothing goes out without your approval.</li>
+                </ul>
                 <div class="cta-buttons">
                     <a href="https://michaelscomputerrepair.simplybook.me/v2/#book" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Book a free automation call</a>
                     <a href="tel:+17546665509" class="btn btn-secondary">
@@ -132,12 +137,12 @@
                     <p class="eyebrow">E3</p>
                     <h3 class="project-title">I publish my AI's test results, including where it could fail</h3>
                     <div class="demo-metrics">
-                        <div class="demo-metric"><strong>42 / 42</strong><span>Correct synthetic holdout outcomes</span></div>
-                        <div class="demo-metric"><strong>36 / 42</strong><span>Correct keyword-baseline outcomes</span></div>
-                        <div class="demo-metric"><strong>190 ms</strong><span>Median measured API latency</span></div>
-                        <div class="demo-metric"><strong>0 / 42</strong><span>Incorrect approval-required outcomes</span></div>
+                        <div class="demo-metric"><strong>42 / 42</strong><span>Unseen test requests matched</span></div>
+                        <div class="demo-metric"><strong>36 / 42</strong><span>Matched by keyword rules alone</span></div>
+                        <div class="demo-metric"><strong>190 ms</strong><span>Typical reply speed</span></div>
+                        <div class="demo-metric"><strong>0 / 42</strong><span>Unsafe auto-approvals</span></div>
                     </div>
-                    <p class="portfolio-disclosure">One hand-labeled synthetic benchmark: 48 cases, 6 calibration / 42 holdout, fixed thresholds, no tuning after holdout. API p95 258 ms; 34,609 input tokens; estimated model cost $0.001454 across all 48 calls at the documented rate. Excludes hosting and gateway overhead. This is not customer impact, production accuracy or a guarantee of safety.</p>
+                    <p class="portfolio-disclosure">Tested on 48 fictional repair requests (6 setup examples and 42 unseen test cases) at a total AI cost under a fifth of a cent ($0.0015). Full test details and limits are on the evaluation page.</p>
                     <div class="project-actions">
                         <a class="btn btn-primary" href="repair-evaluation.html">Explore the evaluation →</a>
                         <a class="source-link" href="evaluation-results.json">evaluation-results.json ↗</a>
@@ -171,171 +176,70 @@
         </div>
     </section>
 
-    <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">About</h2>
-                <p class="section-description">I run Michael's Computer Repair Service in Davie, FL and build Python automation with bounded workflows, visible evidence, and human approval. <a href="resume.html">Read the résumé →</a></p>
+    <section id="automation"><div id="demo-repair"></div><div id="demo-listings"></div><div class="container">
+        <div class="section-header">
+            <p class="eyebrow">Interactive demos</p>
+            <h2 class="section-title">Try a shop workflow</h2>
+            <p class="section-description">Test the repair-intake flow or the parts and resale cost calculator in your browser. Both use fictional examples and never touch customer records.</p>
+        </div>
+        <div class="demo-tabs" role="group" aria-label="Select an interactive demo">
+            <button type="button" data-demo-tab="repair" aria-pressed="true">01 / Repair desk</button>
+            <button type="button" data-demo-tab="listings" aria-pressed="false">02 / Parts &amp; listings</button>
+        </div>
+        <div class="demo-workspace">
+            <div class="demo-controls">
+                <p class="eyebrow">Your inputs</p>
+                <h3 id="demo-title">Repair intake → reviewed next step</h3>
+                <p id="demo-help">Choose a request and inspect the result.</p>
+                <label id="demo-input-label" for="demo-scenario">Fictional request</label>
+                <select id="demo-scenario"></select>
+                <div id="demo-weight-controls" hidden>
+                    <label id="demo-weight-label" for="demo-weight">Weight</label>
+                    <input id="demo-weight" type="range" min="0" max="100" step="1" value="50">
+                    <output id="demo-weight-value" for="demo-weight">50</output>
+                </div>
+                <div id="repair-extra">
+                    <label for="repair-mode">Execution mode</label>
+                    <select class="evidence-input" id="repair-mode">
+                        <option value="recorded">Saved AI results</option>
+                        <option value="live" disabled>Live AI · when available</option>
+                        <option value="offline">Offline rule check</option>
+                    </select>
+                    <p id="live-status" class="demo-note">Checking live service availability…</p>
+                    <label for="repair-text">Fictional repair request for live mode</label>
+                    <textarea id="repair-text" rows="4" maxlength="600">My fictional Northstar N14 will not charge. Could you estimate an inspection?</textarea>
+                    <p class="demo-note">Use fictional text only. No customer request is saved.</p>
+                </div>
+                <div id="listings-extra" hidden>
+                    <label for="listing-target">Target device</label>
+                    <select id="listing-target" class="evidence-input">
+                        <option>Northstar N14</option>
+                        <option>Meridian M2</option>
+                    </select>
+                    <details>
+                        <summary>Edit cost assumptions (USD)</summary>
+                        <label for="cost-outbound">Outbound shipping</label>
+                        <input class="evidence-input" id="cost-outbound" type="number" min="0" max="1000" step="0.01" value="20">
+                        <label for="cost-labor">Labor</label>
+                        <input class="evidence-input" id="cost-labor" type="number" min="0" max="1000" step="0.01" value="15">
+                        <label for="cost-returns">Returns reserve</label>
+                        <input class="evidence-input" id="cost-returns" type="number" min="0" max="1000" step="0.01" value="10">
+                        <label for="cost-overhead">Overhead</label>
+                        <input class="evidence-input" id="cost-overhead" type="number" min="0" max="1000" step="0.01" value="5">
+                    </details>
+                </div>
+                <button class="btn btn-primary" id="run-demo" type="button">Run the demo →</button>
+                <p class="demo-note" id="demo-scope">Fictional inputs · no real actions</p>
+                <a id="demo-source" href="https://github.com/michaelrizzo2/ai-repair-shop-operations-demo" target="_blank" rel="noopener noreferrer">View source code ↗</a>
+            </div>
+            <div class="demo-output" id="demo-result" role="status" aria-live="polite" aria-atomic="false">
+                <h3>Ready to explore</h3>
+                <p>The result will appear here. Enable JavaScript to run the browser demos.</p>
             </div>
         </div>
-    </section>
-
-    <section id="projects"><div class="container"><div class="section-header"><p class="eyebrow">Selected work · source code + interactive demos</p><h2 class="section-title">Practical automation you can explore</h2><p class="section-description">A model-backed repair workflow, transparent listing costs, sourced public jobs and a historical strategy audit. Inspect the evidence, change the inputs and explore the code.</p></div><div class="projects-grid"><article class="project-card featured-card">
-  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Repair shop operations</h3>
-  <p>Route a fictional repair request, check compatible stock and inspect an itemized estimate before approval.</p><div class="project-tech"><span class="tech-badge">Python · FastAPI · Approval boundaries</span></div>
-  <p class="project-proof">Typed AI integration · server approval · measured evaluation</p>
-  <div class="project-actions"><a class="btn btn-primary" href="#demo-repair" data-demo-link="repair">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/ai-repair-shop-operations-demo" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
-  <details><summary>What to explore</summary><p>Explore missing information and unavailable inventory. In offline mode, simulate a tool failure; approvals create fictional bookings only.</p><a href="https://github.com/michaelrizzo2/ai-repair-shop-operations-demo/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
- </article><article class="project-card featured-card">
-  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Marketplace listing analysis</h3>
-  <p>Compare target match and evidence alongside complete cost assumptions. Any projected margin is an example.</p><div class="project-tech"><span class="tech-badge">Python · Weighted scoring · Integer-cent pricing</span></div>
-  <p class="project-proof">Inspectable calculations · tested boundaries</p>
-  <div class="project-actions"><a class="btn btn-primary" href="#demo-listings" data-demo-link="listings">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/ai-listing-scorer" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
-  <details><summary>What to explore</summary><p>Adjust the relevance weight. See how incomplete evidence remains visible even when a listing ranks highly.</p><a href="https://github.com/michaelrizzo2/ai-listing-scorer/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
- </article></div>
- <div class="more-projects">
-  <h3 class="more-projects-title">More projects</h3>
-  <p class="section-description">Job opportunity ranking and a historical strategy gate.</p>
-  <div class="projects-grid"><article class="project-card featured-card">
-  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Job opportunity ranking</h3>
-  <p>Rank sourced employer postings with an editable keyword rubric for skills, responsibilities and preferences.</p><div class="project-tech"><span class="tech-badge">Python · Fit dimensions · Adjustable weights</span></div>
-  <p class="project-proof">12 sourced postings · editable rubric</p>
-  <div class="project-actions"><a class="btn btn-primary" href="#demo-jobs" data-demo-link="jobs">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/ai-job-hunt-app" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
-  <details><summary>What to explore</summary><p>Edit a sample profile, inspect the keyword rubric and open the original employer postings. Unconfirmed remote roles remain excluded from the remote filter.</p><a href="https://github.com/michaelrizzo2/ai-job-hunt-app/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
- </article><article class="project-card featured-card">
-  <p class="eyebrow">Interactive case study</p><h3 class="project-title">Strategy evaluation gate</h3>
-  <p>Audit a fixed historical strategy with causal execution, fees, slippage, drawdown and benchmark gates.</p><div class="project-tech"><span class="tech-badge">Python · Backtesting · Deterministic gates</span></div>
-  <p class="project-proof">Inspectable calculations · tested boundaries</p>
-  <div class="project-actions"><a class="btn btn-primary" href="#demo-trading" data-demo-link="trading">Try the demo →</a><a class="source-link" href="https://github.com/michaelrizzo2/eth17-trading-gate" target="_blank" rel="noopener noreferrer">View source code ↗</a></div>
-  <details><summary>What to explore</summary><p>Inspect 720 complete Kraken daily candles, a frozen chronological holdout, costs and a buy-and-hold benchmark. Failed gates remain visible.</p><a href="https://github.com/michaelrizzo2/eth17-trading-gate/blob/main/VALIDATION.md" target="_blank" rel="noopener noreferrer">Read the verification notes ↗</a></details>
- </article></div></div><p class="portfolio-disclosure">Repair intake includes recorded TypeSafe judgments and bounded live inference when available. Listing inputs are fictional; jobs and ETH prices are sourced snapshots. No customer records, applications or exchange orders are accessed.</p></div></section>
-
-<section id="automation"><div id="demo-repair"></div><div id="demo-listings"></div><div id="demo-jobs"></div><div id="demo-trading"></div><div class="container">
- <div class="section-header"><p class="eyebrow">Explore the work</p><h2 class="section-title">Try a workflow. Inspect the result.</h2><p class="section-description">Choose a project, change the inputs and inspect the result. Repair offers recorded judgments and live TypeSafe when available; the other demos use transparent calculations.</p></div>
- <div class="demo-tabs" role="group" aria-label="Select an interactive project"><button type="button" data-demo-tab="repair" aria-pressed="true">01 / Repair desk</button><button type="button" data-demo-tab="listings" aria-pressed="false">02 / Listings</button><button type="button" data-demo-tab="jobs" aria-pressed="false">03 / Job fit</button><button type="button" data-demo-tab="trading" aria-pressed="false">04 / Trading gate</button></div>
- <div class="demo-workspace"><div class="demo-controls"><p class="eyebrow">Your inputs</p><h3 id="demo-title">Repair intake → reviewed next step</h3><p id="demo-help">Choose a request and inspect the result.</p><label id="demo-input-label" for="demo-scenario">Fictional request</label><select id="demo-scenario"></select><div id="demo-weight-controls" hidden><label id="demo-weight-label" for="demo-weight">Weight</label><input id="demo-weight" type="range" min="0" max="100" step="1" value="50"><output id="demo-weight-value" for="demo-weight">50</output></div><div id="repair-extra"><label for="repair-mode">Execution mode</label><select class="evidence-input" id="repair-mode"><option value="recorded">Recorded TypeSafe results</option><option value="live" disabled>Live TypeSafe · when available</option><option value="offline">Offline rule demonstration</option></select><p id="live-status" class="demo-note">Checking live service availability…</p><label for="repair-text">Fictional repair request for live mode</label><textarea id="repair-text" rows="4" maxlength="600">My fictional Northstar N14 will not charge. Could you estimate an inspection?</textarea><p class="demo-note">Live text is sent to TypeSafe. This demo stores its hash, not the raw request. Use fictional text only.</p></div>
-<div id="listings-extra" hidden><label for="listing-target">Target device</label><select id="listing-target" class="evidence-input"><option>Northstar N14</option><option>Meridian M2</option></select><details><summary>Edit cost assumptions (USD)</summary><label for="cost-outbound">Outbound shipping</label><input class="evidence-input" id="cost-outbound" type="number" min="0" max="1000" step="0.01" value="20"><label for="cost-labor">Labor</label><input class="evidence-input" id="cost-labor" type="number" min="0" max="1000" step="0.01" value="15"><label for="cost-returns">Returns reserve</label><input class="evidence-input" id="cost-returns" type="number" min="0" max="1000" step="0.01" value="10"><label for="cost-overhead">Overhead</label><input class="evidence-input" id="cost-overhead" type="number" min="0" max="1000" step="0.01" value="5"></details></div>
-<div id="jobs-extra" hidden><label for="profile-skills">Sample skills · comma-separated</label><input id="profile-skills" class="evidence-input" maxlength="300" value="python, apis, automation, evaluation"><label for="profile-responsibilities">Desired responsibilities · comma-separated</label><input id="profile-responsibilities" class="evidence-input" maxlength="300" value="workflow, agent, integration"><label for="profile-location">Preferred location text · blank for any</label><input id="profile-location" class="evidence-input" maxlength="80" value="San Francisco"><p class="demo-note">Skills 60% + responsibilities 40% within technical fit. Location is a text match. Remote is unknown unless explicitly sourced.</p></div>
-<div id="trading-extra" hidden><label for="trading-slippage">Adverse spread/slippage per side (bps)</label><input id="trading-slippage" class="evidence-input" type="number" min="0" max="100" step="1" value="10"><p class="demo-note">Fixed 5/17 strategy. Split and parameters selected before calculating results; no optimization. Historical results do not predict future returns.</p></div><button class="btn btn-primary" id="run-demo" type="button">Run the demo →</button><p class="demo-note" id="demo-scope">Fictional inputs · explicit execution modes · no real actions</p><a id="demo-source" href="https://github.com/michaelrizzo2/ai-repair-shop-operations-demo" target="_blank" rel="noopener noreferrer">View source code ↗</a></div><div class="demo-output" id="demo-result" role="status" aria-live="polite" aria-atomic="false"><h3>Ready to explore</h3><p>The result will appear here. Enable JavaScript to run the browser demos.</p></div></div>
- <noscript><p class="portfolio-disclosure">JavaScript is required for these interactive demos. All four source-code links above remain available.</p></noscript>
- </div></section>
-<section id="approach"><div class="container"><div class="section-header"><p class="eyebrow">Engineering decisions</p><h2 class="section-title">Clear rules. Visible evidence. Reviewed actions.</h2></div><div class="projects-grid"><article class="project-card"><h3 class="project-title">Keep calculations in code</h3><p>Pricing uses integer cents. Ranking weights are visible. Trading signals use past observations and account for the selected fees.</p></article><article class="project-card"><h3 class="project-title">Make uncertainty visible</h3><p>Missing device models stop estimates. Incomplete listing and job evidence stays visible. Historical strategy results must satisfy explicit holdout, friction, drawdown and benchmark checks.</p></article><article class="project-card"><h3 class="project-title">Test the action boundaries</h3><p>The Python repair workflow binds approval to an expiring session and the current proposal. Live mode enforces that boundary on the server; recorded and offline modes simulate the action locally.</p></article></div><details class="integration-note"><summary>AI architecture and TypeSafe</summary><p>The repair workflow uses TypeSafe Choice and Noul through a server-side adapter. Typed judgments select bounded branches; code owns prices, budgets and explicit approval. A frozen synthetic benchmark, raw answers and latency/token measurements are public. Other demos use transparent rules, not model inference.</p><a href="https://docs.typesafe.ai/patterns/composite-scoring" target="_blank" rel="noopener noreferrer">Read the structured-judgment pattern ↗</a></details></div></section>
-    <!-- Projects Section -->
-    <section id="systems">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Systems engineering foundation</h2>
-                <p class="section-description">
-                    The desktop and Linux work behind my approach to practical automation.
-                </p>
-            </div>
-
-            <details class="integration-note"><summary>Explore desktop and Linux project details</summary><div class="projects-grid">
-                <!-- Project 1: Win11 Task Manager -->
-                <div class="project-card reveal">
-                    <div class="project-header">
-                        <h3 class="project-title">Win11 Task Manager</h3>
-                    </div>
-                    <p class="project-description">
-                        A feature-rich system monitor for Linux that replicates Windows 11 aesthetics and functionality.
-                        Built with Python and PySide6, it offers comprehensive real-time insights and management.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">PySide6</span>
-                        <span class="tech-badge">psutil</span>
-                        <span class="tech-badge">Fluent Design</span>
-                        <span class="tech-badge">System APIs</span>
-                    </div>
-                    <div class="project-features-container"
-                        style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                        <div>
-                            <h4 style="font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 0.5rem;">Process
-                                Management</h4>
-                            <ul class="project-features" style="font-size: 0.85rem;">
-                                <li>Live list (CPU, Mem, GPU, Energy)</li>
-                                <li>Dynamic column sorting</li>
-                                <li>Update freeze (Ctrl key)</li>
-                                <li>End task & Properties info</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 style="font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 0.5rem;">Performance
-                                Monitoring</h4>
-                            <ul class="project-features" style="font-size: 0.85rem;">
-                                <li>Interactive CPU/Mem/Disk/Net/GPU cards</li>
-                                <li>Detailed per-core CPU utilization</li>
-                                <li>Live disk activity & network throughput</li>
-                                <li>GPU utilization & frequency tracking</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div style="margin-top: 1rem;">
-                        <h4 style="font-size: 0.9rem; color: var(--color-cyan); margin-bottom: 0.5rem;">UI & Experience
-                        </h4>
-                        <ul class="project-features"
-                            style="font-size: 0.85rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
-                            <li>Fluent Design with navigation rail</li>
-                            <li>Dark & Light mode support</li>
-                            <li>Automatic hardware detection</li>
-                            <li>Integrated security handling</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project 3: Power Management Tools -->
-                <div class="project-card reveal">
-                    <div class="project-header">
-                        <h3 class="project-title">TPL Power Management Tool</h3>
-                    </div>
-                    <p class="project-description">
-                        A system tray utility for adjusting Thermal Power Limit (TPL) settings with
-                        predefined power profiles and custom configuration support.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">System Programming</span>
-                        <span class="tech-badge">Power Management</span>
-                        <span class="tech-badge">Linux</span>
-                    </div>
-                    <ul class="project-features">
-                        <li>Battery saver, balanced, and performance modes</li>
-                        <li>Custom power profile creation</li>
-                        <li>System tray integration</li>
-                        <li>Real-time power monitoring</li>
-                    </ul>
-                </div>
-
-
-
-                <!-- Project 5: Battery Viewer -->
-                <div class="project-card reveal">
-                    <div class="project-header">
-                        <h3 class="project-title">Battery Viewer</h3>
-                    </div>
-                    <p class="project-description">
-                        An enhanced battery monitoring application that displays charge/discharge rates
-                        and remaining time directly in the taskbar.
-                    </p>
-                    <div class="project-tech">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">System APIs</span>
-                        <span class="tech-badge">Power Management</span>
-                    </div>
-                    <ul class="project-features">
-                        <li>Real-time charge/discharge rate display</li>
-                        <li>Remaining time estimation</li>
-                        <li>Taskbar integration</li>
-                        <li>Battery health monitoring</li>
-                    </ul>
-                </div>
-
-
-            </div>
-            </details>
-        </div>
-    </section>
-
+        <noscript><p class="portfolio-disclosure">JavaScript is required for these interactive demos. Source-code links above remain available.</p></noscript>
+        <p class="portfolio-disclosure">Looking for the résumé, Linux desktop tools, or earlier engineering projects? <a href="resume.html">Read the résumé and full project list →</a></p>
+    </div></section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -387,13 +291,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Michael Rizzo. Michael's Computer Repair Service, Davie, FL. <a href="tel:+17546665509">(754) 666-5509</a></p>
+            <p>&copy; 2026 Michael Rizzo. Michael's Computer Repair Service, Davie, FL. <a href="tel:+17546665509">(754) 666-5509</a> · <a href="resume.html">Résumé</a></p>
         </div>
     </footer>
 
     <!-- JavaScript -->
-    <script src="demo-engine.js?v=20261021-brand"></script>
-    <script src="script.js?v=20261021-brand"></script>
+    <script src="demo-engine.js?v=20261021-final"></script>
+    <script src="script.js?v=20261021-final"></script>
 </body>
 
 </html>
