@@ -595,7 +595,7 @@ footer p {
 .hero .hero-title{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:#fff;color:#fff;font-size:clamp(1.9rem,4.4vw,3.35rem);letter-spacing:-.035em;line-height:1.12;max-width:18em}
 .hero-accent{color:#41D8D7;-webkit-text-fill-color:#41D8D7}
 .hero .hero-subtitle{font-size:1.05rem;line-height:1.6;color:#c9d0dc;letter-spacing:0;font-weight:400;max-width:40rem;margin-bottom:1.25rem}
-.hero-outcomes{list-style:none;padding:0;margin:0 0 1.75rem;display:grid;gap:.6rem;max-width:40rem;text-align:left}
+.hero-outcomes{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;gap:.6rem;max-width:40rem;text-align:left}
 .hero-outcomes li{position:relative;padding-left:1.5rem;color:#e4ecee;font-size:.98rem;line-height:1.55}
 .hero-outcomes li::before{content:'✓';position:absolute;left:0;top:0;color:#41D8D7;font-weight:700}
 .hero .cta-buttons{justify-content:flex-start}
@@ -626,7 +626,7 @@ img,svg{max-width:100%}
   .hero-layout{flex-direction:column-reverse;text-align:center;align-items:center;gap:12px}
   .hero .cta-buttons{justify-content:center;gap:.6rem}
   .hero .hero-subtitle{margin-left:auto;margin-right:auto;margin-bottom:.85rem;font-size:.95rem;line-height:1.45}
-  .hero-outcomes{margin:0 auto 1rem;gap:.4rem}
+  .hero-outcomes{margin:1rem auto 0;gap:.4rem}
   .hero-outcomes li{font-size:.9rem;line-height:1.4}
   .hero-mascot{width:96px;max-width:34vw}
   .hero .hero-title{font-size:clamp(1.55rem,7.2vw,2rem);margin-bottom:.6rem}
