@@ -604,6 +604,11 @@ footer p {
 .hero .btn-secondary{border-color:#298798;color:#fff}
 .hero .btn-secondary:hover{color:#fff;border-color:#41D8D7}
 .hero-mascot{width:min(210px,34vw);height:auto;flex:0 0 auto;display:block}
+.hero-hiring{margin:1.1rem 0 0;font-size:.92rem;line-height:1.55;color:#c9d0dc}
+.hero-hiring a{color:#41d8d7;font-weight:600;text-underline-offset:3px}
+.shop-card .card-links{display:flex;flex-wrap:wrap;gap:.5rem 1rem;margin-top:.65rem}
+.shop-card .card-links a{font-size:.93rem;font-weight:600}
+.shop-card code{font-size:.85em;padding:2px 6px;border-radius:4px;background:#151521;color:#c4b5fd}
 .shop-grid,.proof-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1.25rem}
 .shop-card p,.proof-card p{font-size:1rem;line-height:1.6}
 .shop-card .source-link,.proof-card .source-link{display:inline-block;margin-top:.35rem}
