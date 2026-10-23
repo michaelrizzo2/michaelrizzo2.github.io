@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 620" width="840" height="620" role="img" aria-labelledby="nd-title nd-desc">
   <title id="nd-title">How the shop bots and the trading app connect</title>
-  <desc id="nd-desc">The bots VM runs the front desk and specialist bots, uses connected services, and reaches the Ryzenator workstation through an approved SSH link. Ryzenator, Plexbeast, and the client trading-ops box share a private Tailscale mesh, and Ryzenator's trading app calls the Kalshi exchange API.</desc>
+  <desc id="nd-desc">The bots VM runs the front desk and specialist bots, uses connected services, and reaches the Ryzenator workstation through an approved SSH link. Ryzenator, Plexbeast, and the client trading-ops box share a private Tailscale mesh, and Ryzenator's trading app calls a public exchange API.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#0a0a0f"/><stop offset="1" stop-color="#1a1a24"/>
@@ -88,23 +88,22 @@
   <rect x="254" y="438" width="166" height="24" rx="8" fill="#202B3D" stroke="#298798"/>
   <text x="337" y="454" text-anchor="middle" class="chipt">Live trading app · weekdays</text>
 
-  <!-- Kalshi (external) -->
+  <!-- Exchange API (external) -->
   <rect x="28" y="398" width="160" height="60" rx="14" fill="#16161f" stroke="rgba(255,255,255,0.22)"/>
-  <text class="h" x="44" y="423" font-size="13.5">Kalshi exchange</text>
+  <text class="h" x="44" y="423" font-size="13.5">Exchange API</text>
   <text class="t" x="44" y="442" font-size="10.5">Public API</text>
   <line x1="234" y1="428" x2="194" y2="428" stroke="#a1a1aa" stroke-width="1.6" marker-end="url(#arG)"/>
 
-  <!-- Ryzenator <-> grok-box-1 -->
+  <!-- Ryzenator <-> client trading-ops box -->
   <line x1="436" y1="428" x2="616" y2="428" stroke="#41D8D7" stroke-width="2" marker-start="url(#arT)" marker-end="url(#arT)"/>
   <text class="lbl" x="526" y="418" text-anchor="middle" fill="#41D8D7">direct peer-to-peer</text>
   <text class="lbl" x="526" y="446" text-anchor="middle" fill="#a8d9ec">Tailscale SSH</text>
 
-  <!-- grok-box-1 -->
+  <!-- Client trading-ops box -->
   <rect x="620" y="376" width="182" height="104" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.6"/>
-  <text class="h" x="636" y="402" font-size="13">Client trading-ops box</text>
-  <text class="t" x="636" y="420" font-size="11">(grok-box-1)</text>
-  <text class="t" x="636" y="446" font-size="10.5" style="fill:#e4ecee">Monitors the trading app</text>
-  <text class="t" x="636" y="463" font-size="10.5" style="fill:#e4ecee">Emails status alerts</text>
+  <text class="h" x="636" y="408" font-size="13">Client trading-ops box</text>
+  <text class="t" x="636" y="438" font-size="10.5" style="fill:#e4ecee">Monitors the trading app</text>
+  <text class="t" x="636" y="458" font-size="10.5" style="fill:#e4ecee">Emails status alerts</text>
 
   <!-- Plexbeast -->
   <line x1="300" y1="482" x2="300" y2="520" stroke="#71717a" stroke-width="1.4" stroke-dasharray="3 3"/>
