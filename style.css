@@ -648,3 +648,54 @@ img,svg{max-width:100%}
   .proof-card .project-actions .btn,.shop-card .source-link{overflow-wrap:anywhere}
   .hero .btn{padding:.75rem 1rem;font-size:.98rem}
 }
+
+/* Mobile readability: diagram scroll, 44px tap targets, demo eyebrow */
+#demo-result > p.eyebrow{font-size:.75rem}
+
+@media(max-width:640px){
+  .network-diagram-figure{
+    overflow-x:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+    max-width:100%;
+    width:100%;
+    padding-bottom:4px;
+    scrollbar-color:#298798 #13131a;
+  }
+  .network-diagram-figure::before{
+    content:"Scroll sideways to see the full diagram →";
+    display:block;
+    text-align:center;
+    font-size:.85rem;
+    color:#a8d9ec;
+    margin-bottom:.65rem;
+    line-height:1.4;
+  }
+  .network-diagram-figure .network-diagram-full{display:block;width:max-content}
+  .network-diagram-figure img{
+    min-width:640px;
+    width:640px;
+    max-width:none;
+  }
+  .site-nav nav a{
+    display:inline-flex;
+    align-items:center;
+    padding:11px 8px;
+    min-height:44px;
+  }
+  a.source-link,
+  .demo-controls > a,
+  .portfolio-disclosure a{
+    display:inline-block;
+    min-height:44px;
+    padding-block:12px;
+    line-height:1.35;
+  }
+  footer p a{
+    display:inline-flex;
+    align-items:center;
+    min-height:44px;
+    padding:11px 10px;
+    margin-inline:2px;
+  }
+}
