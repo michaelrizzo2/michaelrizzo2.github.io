@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 620" width="840" height="620" role="img" aria-labelledby="nd-title nd-desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 980" width="840" height="980" role="img" aria-labelledby="nd-title nd-desc">
   <title id="nd-title">How the shop bots and the trading app connect</title>
-  <desc id="nd-desc">The bots VM runs the front desk and specialist bots, uses connected services, and reaches the Ryzenator workstation through an approved SSH link. Ryzenator, Plexbeast, and the client trading-ops box share a private Tailscale mesh, and Ryzenator's trading app calls a public exchange API.</desc>
+  <desc id="nd-desc">Remote devices including an iPad, Dell laptop, and phone access bots hosted locally on Ryzenator through Tailscale. Michael and Byron retain dashboard access and SSH for approved changes. Ryzenator hosts all shop bots, the Bitcoin trading app, and the Codex workspace. Local bots use the same connected services; the app communicates directly with Kalshi. Plexbeast remains on the home LAN.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#0a0a0f"/><stop offset="1" stop-color="#1a1a24"/>
@@ -21,32 +21,26 @@
     </style>
   </defs>
 
-  <rect width="840" height="620" rx="24" fill="url(#bg)"/>
-  <rect width="840" height="620" rx="24" fill="url(#glowA)"/>
-  <rect width="840" height="620" rx="24" fill="url(#glowB)"/>
-  <rect x="0.5" y="0.5" width="839" height="619" rx="24" fill="none" stroke="rgba(255,255,255,0.10)"/>
+  <rect width="840" height="980" rx="24" fill="url(#bg)"/>
+  <rect width="840" height="980" rx="24" fill="url(#glowA)"/>
+  <rect width="840" height="980" rx="24" fill="url(#glowB)"/>
+  <rect x="0.5" y="0.5" width="839" height="979" rx="24" fill="none" stroke="rgba(255,255,255,0.10)"/>
 
   <!-- Header -->
   <text class="eb" x="28" y="40">NETWORK MAP</text>
-  <text class="h" x="28" y="66" font-size="20">Bots, trading app, and the private mesh</text>
+  <text class="h" x="28" y="66" font-size="20">Shop bots &amp; Ryzenator trading</text>
 
-  <!-- Bots VM -->
-  <rect x="28" y="96" width="360" height="152" rx="16" class="card" stroke="#41D8D7" style="stroke:#41D8D7;stroke-opacity:.7"/>
-  <text class="h" x="48" y="126" font-size="16">Bots VM</text>
-  <text class="t" x="48" y="145" font-size="11.5">Grok Bot cloud computer · front desk + specialist bots</text>
-  <g>
-    <rect x="48" y="162" width="100" height="26" rx="8" fill="#41D8D7"/><text x="98" y="179" text-anchor="middle" class="chipt" style="fill:#202B3D;font-weight:700">Front desk</text>
-    <rect x="158" y="162" width="100" height="26" rx="8" class="chip"/><text x="208" y="179" text-anchor="middle" class="chipt">Pricing</text>
-    <rect x="268" y="162" width="100" height="26" rx="8" class="chip"/><text x="318" y="179" text-anchor="middle" class="chipt">Scheduling</text>
-    <rect x="48" y="198" width="100" height="26" rx="8" class="chip"/><text x="98" y="215" text-anchor="middle" class="chipt">Email</text>
-    <rect x="158" y="198" width="100" height="26" rx="8" class="chip"/><text x="208" y="215" text-anchor="middle" class="chipt">Bookkeeping</text>
-    <rect x="268" y="198" width="100" height="26" rx="8" class="chip"/><text x="318" y="215" text-anchor="middle" class="chipt">Inventory</text>
-  </g>
 
-  <!-- Bots VM <-> services -->
-  <line x1="392" y1="172" x2="436" y2="172" stroke="#41D8D7" stroke-width="1.6" marker-start="url(#arT)" marker-end="url(#arT)"/>
-  <text class="lbl" x="414" y="162" text-anchor="middle" fill="#41D8D7">APIs</text>
-
+  <rect x="28" y="96" width="360" height="152" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.7"/>
+  <text class="h" x="48" y="126" font-size="16">Remote devices</text>
+  <text class="t" x="48" y="148" font-size="11.5">Access the bots hosted locally on Ryzenator</text>
+  <rect x="48" y="168" width="92" height="30" rx="8" class="chip"/>
+  <text class="chipt" x="94" y="187" text-anchor="middle">iPad</text>
+  <rect x="150" y="168" width="112" height="30" rx="8" class="chip"/>
+  <text class="chipt" x="206" y="187" text-anchor="middle">Dell laptop</text>
+  <rect x="272" y="168" width="96" height="30" rx="8" class="chip"/>
+  <text class="chipt" x="320" y="187" text-anchor="middle">Phone</text>
+  <text class="t" x="48" y="226" font-size="11">Remote interface · processing stays on Ryzenator</text>
   <!-- Connected services -->
   <rect x="440" y="96" width="372" height="152" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.22)" stroke-dasharray="5 5"/>
   <text class="eb" x="460" y="124">CONNECTED SERVICES</text>
@@ -59,63 +53,71 @@
   </g>
   <text class="t" x="460" y="230" font-size="11">Bots draft; nothing goes out without approval.</text>
 
-  <!-- Tailscale mesh overlay -->
-  <rect x="210" y="318" width="602" height="276" rx="20" fill="rgba(65,216,215,0.04)" stroke="#41D8D7" stroke-opacity="0.55" stroke-width="1.4" stroke-dasharray="7 6"/>
-  <g transform="translate(548,334)">
-    <rect x="0" y="0" width="248" height="24" rx="12" fill="#202B3D" stroke="#298798"/>
-    <!-- lock icon -->
-    <g transform="translate(12,5)" fill="none" stroke="#41D8D7" stroke-width="1.5">
-      <rect x="0.5" y="6" width="10" height="8" rx="1.5" fill="#41D8D7" stroke="none"/>
-      <path d="M2.5 6 V4 a3 3 0 0 1 6 0 V6"/>
-    </g>
-    <text x="30" y="16" class="lbl" fill="#e4ecee">Tailscale mesh</text>
-    <text x="124" y="16" class="t" font-size="10.5">private WireGuard</text>
+
+
+  <path d="M200 253 V310 H222 V554 H230" fill="none" stroke="#41D8D7" stroke-width="1.6" marker-start="url(#arT)" marker-end="url(#arT)"/>
+  <text class="lbl" x="28" y="274" fill="#41D8D7">Remote access via Tailscale</text>
+  <text class="t" x="28" y="293" font-size="11">Connect to the local bots</text>
+  <path d="M812 172 H826 V754 H790" fill="none" stroke="#a1a1aa" stroke-width="1.6" marker-start="url(#arG)" marker-end="url(#arG)"/>
+  <text class="lbl" x="793" y="286" text-anchor="end" fill="#a1a1aa">Local bots ↔ connected service APIs</text>
+  <!-- Private network boundary -->
+  <rect x="210" y="326" width="602" height="616" rx="20" fill="rgba(65,216,215,0.04)" stroke="#41D8D7" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="7 6"/>
+  <text class="eb" x="236" y="352">TAILSCALE MESH · PRIVATE ACCESS</text>
+
+  <!-- Human access endpoints -->
+  <rect x="236" y="378" width="254" height="86" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.6"/>
+  <text class="h" x="254" y="405" font-size="15">Michael</text>
+  <text class="t" x="254" y="426" font-size="11.5">Dashboard + SSH access</text>
+  <text class="t" x="254" y="446" font-size="11">App changes as approved</text>
+  <rect x="530" y="378" width="254" height="86" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.6"/>
+  <text class="h" x="548" y="405" font-size="15">Byron</text>
+  <text class="t" x="548" y="426" font-size="11.5">Dashboard + SSH access</text>
+  <text class="t" x="548" y="446" font-size="11">App changes as approved</text>
+
+  <path d="M290 469 V515" stroke="#41D8D7" stroke-width="1.6" marker-start="url(#arT)" marker-end="url(#arT)"/><path d="M584 469 V515" stroke="#41D8D7" stroke-width="1.6" marker-start="url(#arT)" marker-end="url(#arT)"/>
+  <path d="M437 469 V515" stroke="#a78bfa" stroke-width="1.6" marker-end="url(#arP)"/><path d="M731 469 V515" stroke="#a78bfa" stroke-width="1.6" marker-end="url(#arP)"/>
+  <text class="lbl" x="305" y="491" fill="#41D8D7">Dashboard</text>
+  <text class="lbl" x="448" y="505" fill="#c4b5fd">SSH</text>
+  <text class="lbl" x="599" y="491" fill="#41D8D7">Dashboard</text>
+  <text class="lbl" x="742" y="505" fill="#c4b5fd">SSH</text>
+
+  <!-- Local hosting and execution -->
+  <rect x="236" y="520" width="548" height="282" rx="16" class="card" style="stroke:#a78bfa;stroke-opacity:.8"/>
+  <text class="h" x="254" y="550" font-size="17">Ryzenator</text>
+  <text class="t" x="254" y="571" font-size="11.5">Home workstation · Linux · local bots + all trade processing</text>
+  <rect x="254" y="587" width="512" height="49" rx="8" class="chip"/>
+  <text class="chipt" x="270" y="608" style="font-weight:700">15-minute Bitcoin trading app</text>
+  <text class="t" x="270" y="625" font-size="11">Strategy → decisions → order execution → trade history</text>
+  <rect x="254" y="650" width="250" height="47" rx="8" fill="#1b1b28" stroke="#4b4b60"/>
+  <text class="chipt" x="270" y="669">Codex workspace</text>
+  <text class="t" x="270" y="686" font-size="10.5">Develop + apply approved changes</text>
+  <text class="t" x="523" y="667" font-size="11">SSH tunnel → maintenance</text>
+  <text class="t" x="523" y="687" font-size="11">Tailscale → dashboard access</text>
+
+  <!-- Kalshi is external to the tailnet -->
+  <rect x="28" y="568" width="160" height="91" rx="14" class="card"/>
+  <text class="h" x="44" y="595" font-size="15">Kalshi</text>
+  <text class="t" x="44" y="616" font-size="11">Market data + orders</text>
+  <text class="t" x="44" y="636" font-size="11">Fills + trade status</text>
+  <line x1="194" y1="612" x2="230" y2="612" stroke="#a1a1aa" stroke-width="1.6" marker-start="url(#arG)" marker-end="url(#arG)"/>
+  <text class="lbl" x="108" y="682" text-anchor="middle" fill="#a1a1aa">Direct exchange API</text>
+
+
+  <rect x="254" y="710" width="512" height="72" rx="8" class="chip"/>
+  <text class="chipt" x="270" y="732" style="font-weight:700">Local shop bots</text>
+  <text class="t" x="270" y="752" font-size="11">Front desk · Pricing · Scheduling · Email</text>
+  <text class="t" x="270" y="770" font-size="11">Bookkeeping · Inventory · connected service APIs</text>
+  <!-- Existing home server -->
+  <path d="M340 804 V844" stroke="#71717a" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <text class="t" x="352" y="828" font-size="10.5">same home LAN</text>
+  <rect x="236" y="848" width="254" height="67" rx="14" fill="#13131a" stroke="rgba(255,255,255,.15)"/>
+  <text class="h" x="254" y="875" font-size="14">Plexbeast</text>
+  <text class="t" x="254" y="896" font-size="11">Home server</text>
+
+  <g transform="translate(530,854)" class="t" font-size="11">
+    <line x1="0" y1="6" x2="22" y2="6" stroke="#41D8D7" stroke-width="2"/><text x="32" y="10">Private dashboard connection</text>
+    <line x1="0" y1="28" x2="22" y2="28" stroke="#a78bfa" stroke-width="2"/><text x="32" y="32">Approved SSH changes</text>
+    <line x1="0" y1="50" x2="22" y2="50" stroke="#a1a1aa" stroke-width="2"/><text x="32" y="54">External API traffic</text>
   </g>
-
-  <!-- SSH: Bots VM -> Ryzenator -->
-  <line x1="320" y1="252" x2="320" y2="372" stroke="#a78bfa" stroke-width="1.8" marker-end="url(#arP)"/>
-  <text class="lbl" x="332" y="276" fill="#c4b5fd">Approved remote command (SSH)</text>
-  <g transform="translate(332,288)">
-    <rect width="162" height="20" rx="10" fill="#1b1b28" stroke="#4b4b60"/>
-    <circle cx="12" cy="10" r="3.5" fill="#88e0bb"/>
-    <text x="22" y="14" class="t" font-size="10">Watchdog keeps tunnel up</text>
-  </g>
-
-  <!-- Ryzenator -->
-  <rect x="236" y="376" width="196" height="104" rx="16" class="card" style="stroke:#a78bfa;stroke-opacity:.8"/>
-  <text class="h" x="254" y="404" font-size="15">Ryzenator</text>
-  <text class="t" x="254" y="424" font-size="11">Home workstation · Linux</text>
-  <rect x="254" y="438" width="166" height="24" rx="8" fill="#202B3D" stroke="#298798"/>
-  <text x="337" y="454" text-anchor="middle" class="chipt">Live trading app · weekdays</text>
-
-  <!-- Exchange API (external) -->
-  <rect x="28" y="398" width="160" height="60" rx="14" fill="#16161f" stroke="rgba(255,255,255,0.22)"/>
-  <text class="h" x="44" y="423" font-size="13.5">Exchange API</text>
-  <text class="t" x="44" y="442" font-size="10.5">Public API</text>
-  <line x1="234" y1="428" x2="194" y2="428" stroke="#a1a1aa" stroke-width="1.6" marker-end="url(#arG)"/>
-
-  <!-- Ryzenator <-> client trading-ops box -->
-  <line x1="436" y1="428" x2="616" y2="428" stroke="#41D8D7" stroke-width="2" marker-start="url(#arT)" marker-end="url(#arT)"/>
-  <text class="lbl" x="526" y="418" text-anchor="middle" fill="#41D8D7">direct peer-to-peer</text>
-  <text class="lbl" x="526" y="446" text-anchor="middle" fill="#a8d9ec">Tailscale SSH</text>
-
-  <!-- Client trading-ops box -->
-  <rect x="620" y="376" width="182" height="104" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.6"/>
-  <text class="h" x="636" y="408" font-size="13">Client trading-ops box</text>
-  <text class="t" x="636" y="438" font-size="10.5" style="fill:#e4ecee">Monitors the trading app</text>
-  <text class="t" x="636" y="458" font-size="10.5" style="fill:#e4ecee">Emails status alerts</text>
-
-  <!-- Plexbeast -->
-  <line x1="300" y1="482" x2="300" y2="520" stroke="#71717a" stroke-width="1.4" stroke-dasharray="3 3"/>
-  <text class="t" x="308" y="505" font-size="10">same home LAN</text>
-  <rect x="236" y="522" width="196" height="50" rx="14" fill="#13131a" stroke="rgba(255,255,255,0.15)"/>
-  <text class="h" x="254" y="544" font-size="13">Plexbeast</text>
-  <text class="t" x="254" y="561" font-size="10.5">Home server</text>
-
-  <!-- Legend -->
-  <g transform="translate(620,516)" font-family="Inter,sans-serif" font-size="10">
-    <line x1="0" y1="6" x2="22" y2="6" stroke="#41D8D7" stroke-width="2"/><text x="30" y="10" fill="#a1a1aa">Encrypted mesh link</text>
-    <line x1="0" y1="24" x2="22" y2="24" stroke="#a78bfa" stroke-width="2"/><text x="30" y="28" fill="#a1a1aa">Approved SSH</text>
-    <line x1="0" y1="42" x2="22" y2="42" stroke="#a1a1aa" stroke-width="2"/><text x="30" y="46" fill="#a1a1aa">External API call</text>
-  </g>
+  <text class="t" x="28" y="964" font-size="11">Bots and trading run locally on Ryzenator; remote devices provide access.</text>
 </svg>
