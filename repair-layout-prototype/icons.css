@@ -1,0 +1,53 @@
+/* Icon spacing for Font Awesome inside buttons and links */
+.btn {
+  gap: 0.55em;
+}
+
+.btn .fa-solid,
+.btn .fa-brands {
+  font-size: 1.15em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.header-nav a.nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+}
+
+.contact-lane .btn-row,
+.final-contact-actions {
+  align-items: stretch;
+}
+
+.contact-channel-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin: 0 0 8px;
+}
+
+.contact-channel-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--teal);
+  font-size: 1rem;
+}
+
+.contact-channel-links a:hover {
+  color: var(--teal-dark);
+}
+
+.final-contact-actions {
+  max-width: 28rem;
+}
+
+.site-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+}

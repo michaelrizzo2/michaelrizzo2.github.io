@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Layout prototype</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="icons.css">
+</head>
+<body>
+  <p class="prototype-banner">Layout prototype — Contact Us page: fast lane first, form second (same site copy).</p>
+
+  <header class="site-header">
+    <div class="container inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">MCR</span>
+        <span>Michael's Computer<br>Repair Service</span>
+      </a>
+      <nav class="header-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="contact.html" class="nav-contact" aria-current="page"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
+        <a href="index.html#on-site">Offices</a>
+        <a href="https://michaelscomputerrepair.simplybook.me/v2/#book" target="_blank" rel="noopener noreferrer">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <div class="container layout">
+      <section class="fast-lane" aria-labelledby="contact-title">
+        <p class="eyebrow" style="color:var(--teal);font-weight:700;text-transform:uppercase;font-size:13px;margin:0 0 8px">Contact Us</p>
+        <h1 id="contact-title">Get Expert Support Today</h1>
+        <p class="lead">If you have a computer issue, you can fill out the message form on this page — or reach Michael directly below.</p>
+
+        <p style="margin:0 0 4px;font-weight:700">Phone Number</p>
+        <a class="big-phone" href="tel:+17546665509" style="margin-bottom:16px">754-666-5509</a>
+
+        <p class="contact-channel-links">
+          <a href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+          <a href="sms:+17546665509"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Text</a>
+          <a href="https://wa.me/17546665509" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
+        </p>
+
+        <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--border)">
+          <h3 style="margin:0 0 8px;font-size:18px">Contact hours</h3>
+          <p style="margin:0;color:var(--muted);font-size:16px">Monday–Saturday: 9 AM–8 PM<br>Sunday: 1 PM–8 PM</p>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:16px">Davie, FL · By appointment · Broward &amp; Miami-Dade</p>
+        </div>
+
+        <p style="margin-top:24px;font-size:15px;color:var(--muted)"><strong>Or you can call the phone number listed above.</strong> (Live site wording — form is for when call or text is not ideal.)</p>
+      </section>
+
+      <section class="form-panel" aria-labelledby="form-title">
+        <h2 id="form-title">Message form</h2>
+        <p class="hint">If you have a computer issue, please fill out the message form to the side. (On mobile in this prototype, the form appears below the phone section.)</p>
+
+        <form action="#" method="post" onsubmit="event.preventDefault(); alert('Prototype only — form not connected.');">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Describe what's going wrong in plain words…"></textarea>
+
+          <button type="submit" class="btn btn-form"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send message</button>
+          <p class="form-note">Prototype form — on Squarespace, this stays your existing Contact Us form.</p>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <a href="index.html">← Back to homepage</a>
+      <p>Michael's Computer Repair Service · © 2026 prototype</p>
+    </div>
+  </footer>
+
+</body>
+</html>
