@@ -1,4 +1,4 @@
-/* Icon spacing for Font Awesome inside buttons and sticky bar */
+/* Icon spacing for Font Awesome inside buttons and links */
 .btn {
   gap: 0.55em;
 }
@@ -10,50 +10,44 @@
   flex-shrink: 0;
 }
 
-.header-actions a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
-}
-
 .header-nav a.nav-contact {
   display: inline-flex;
   align-items: center;
   gap: 0.45em;
 }
 
-.sticky-contact a {
-  flex-direction: column;
-  gap: 4px;
-  padding: 8px 4px;
-  font-size: 11px;
-  line-height: 1.2;
-  text-align: center;
+.contact-lane .btn-row,
+.final-contact-actions {
+  align-items: stretch;
 }
 
-.sticky-contact .fa-solid,
-.sticky-contact .fa-brands {
-  font-size: 1.35rem;
+.contact-channel-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin: 0 0 8px;
+}
+
+.contact-channel-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--teal);
+  font-size: 1rem;
+}
+
+.contact-channel-links a:hover {
+  color: var(--teal-dark);
+}
+
+.final-contact-actions {
+  max-width: 28rem;
 }
 
 .site-footer a {
   display: inline-flex;
   align-items: center;
   gap: 0.35em;
-}
-
-.quick-contact .btn-row,
-.final-contact .btn-row,
-.contact-lane .btn-row {
-  align-items: stretch;
-}
-
-.btn-icon-only .btn-label-short {
-  display: none;
-}
-
-@media (max-width: 380px) {
-  .sticky-contact a {
-    font-size: 10px;
-  }
 }

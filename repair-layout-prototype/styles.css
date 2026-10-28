@@ -10,7 +10,6 @@
   --focus: #00ced1;
   --max: 1149px;
   --nav-h: 64px;
-  --sticky-h: 56px;
 }
 
 *,
@@ -28,7 +27,6 @@ body {
   font: 18px/1.65 Arial, Helvetica, sans-serif;
   color: var(--ink);
   background: var(--white);
-  padding-bottom: calc(var(--sticky-h) + 8px);
 }
 
 a {
@@ -246,43 +244,6 @@ textarea:focus-visible {
   color: var(--muted);
 }
 
-/* ——— Quick contact strip (repeated) ——— */
-.quick-contact {
-  background: var(--ink);
-  color: var(--white);
-  padding: 20px 0;
-}
-
-.quick-contact .inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.quick-contact p {
-  margin: 0;
-  font-size: 16px;
-  max-width: 28rem;
-}
-
-.quick-contact .btn-row .btn-outline {
-  border-color: rgba(255, 255, 255, 0.5);
-  color: var(--white);
-}
-
-.quick-contact .btn-row .btn-outline:hover {
-  background: var(--white);
-  color: var(--ink);
-}
-
-.quick-contact .btn-form {
-  border-color: #41d8d7;
-  background: #41d8d7;
-  color: var(--ink);
-}
-
 /* ——— Problem cards ——— */
 .section {
   padding: clamp(40px, 6vw, 56px) 0;
@@ -422,79 +383,6 @@ textarea:focus-visible {
 
 .site-footer a {
   margin: 0 10px;
-}
-
-/* ——— Mobile sticky bar ——— */
-.sticky-contact {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.15fr;
-  gap: 0;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
-}
-
-.sticky-contact a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: var(--sticky-h);
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--teal);
-  border-right: 1px solid var(--border);
-}
-
-.sticky-contact a:last-child {
-  border-right: 0;
-  background: var(--ink);
-  color: var(--white);
-}
-
-body.layout-no-header .sticky-contact a:last-child {
-  background: var(--teal);
-}
-
-body.layout-no-header .sticky-contact a:nth-child(3) {
-  background: var(--ink);
-  color: var(--white);
-}
-
-@media (min-width: 900px) {
-  .sticky-contact {
-    display: none;
-  }
-
-  body {
-    padding-bottom: 0;
-  }
-
-  /* No-header layout: contact bar stays visible on desktop too */
-  body.layout-no-header {
-    padding-bottom: calc(var(--sticky-h) + 8px);
-  }
-
-  body.layout-no-header .sticky-contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1.2fr 1fr;
-  }
-
-  body.layout-no-header .sticky-contact a:nth-child(3) {
-    background: var(--ink);
-    color: var(--white);
-  }
-
-  body.layout-no-header .sticky-contact a:nth-child(4) {
-    border-right: 0;
-    background: var(--teal);
-    color: var(--white);
-  }
 }
 
 body.layout-no-header .site-header {

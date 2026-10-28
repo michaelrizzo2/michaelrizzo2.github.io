@@ -1,6 +1,6 @@
 # Repair site layout prototype
 
-Local layout-only prototype for [michaelscomputerrepairservice.com](https://michaelscomputerrepairservice.com/). Copy matches the live site; structure adds integrated **Contact Us** access.
+Local layout-only prototype for [michaelscomputerrepairservice.com](https://michaelscomputerrepairservice.com/). Copy matches the live site; structure adds integrated **Contact Us** without repeated bottom bars.
 
 ## Run
 
@@ -9,16 +9,20 @@ cd repair-layout-prototype
 python3 -m http.server 8030 --bind 127.0.0.1
 ```
 
-Open http://127.0.0.1:8030/
+- **With header:** http://127.0.0.1:8030/index.html  
+- **No header:** http://127.0.0.1:8030/index-no-header.html  
+- **Contact pages:** `contact.html` / `contact-no-header.html`
 
-## Layout changes vs live site
+## Contact layout (current)
 
-1. **Header** — Contact Us as a filled primary nav button; Call + Message shortcuts on desktop.
-2. **Hero** — “Reach Michael” lane: Text, Call, Book, **Contact Us (message form)**.
-3. **After problem cards** — Dark quick-contact strip with Call, Text, Contact Us.
-4. **What happens next / service area / offices** — Contact Us button alongside existing actions.
-5. **Final band** — Unified Call, Text, Book, Contact form, WhatsApp + link to form in hours column.
-6. **Mobile** — Fixed bottom bar: Call | Text | **Contact Us**.
-7. **Contact page** — Phone, hours, and call/text/book **above** the form (two-column on desktop).
+1. **Hero** — One contact lane: Text, Call, Book, WhatsApp, Contact Us (Font Awesome icons).
+2. **Header** (header variant) — Contact Us nav button; no duplicate Call/Message chips.
+3. **Mid-page** — No extra contact strips or button rows (steps, service area are text only).
+4. **Offices** — Single “Book an on-site visit” button only.
+5. **Closing “Let’s talk”** — Big phone + **Call** and **Text** only (matches live site tone; no second pile of five buttons).
+6. **Footer** — Copyright line only (no footer button row).
+7. **No fixed bottom sticky bar.**
 
-Form is not wired to Squarespace; it demonstrates layout only.
+Contact page: clickable phone + icon links (Call, Text, WhatsApp); form beside/below.
+
+Form is not wired to Squarespace.
