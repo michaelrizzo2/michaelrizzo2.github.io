@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Layout prototype | Michael's Computer Repair Service</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="icons.css">
 </head>
 <body>
   <p class="prototype-banner">Layout prototype only — same wording as the live site; Contact Us integrated throughout. <a class="layout-toggle" href="index-no-header.html">See no-header layout →</a></p>
@@ -17,13 +19,13 @@
       </a>
       <nav class="header-nav" aria-label="Main">
         <a href="index.html">Home</a>
-        <a href="contact.html" class="nav-contact">Contact Us</a>
+        <a href="contact.html" class="nav-contact"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
         <a href="#on-site">Offices</a>
         <a href="https://michaelscomputerrepair.simplybook.me/v2/#book" target="_blank" rel="noopener noreferrer">Book</a>
       </nav>
       <div class="header-actions">
-        <a href="tel:+17546665509">Call</a>
-        <a href="contact.html">Message</a>
+        <a href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+        <a href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Message</a>
       </div>
     </div>
   </header>
@@ -41,14 +43,11 @@
         <div class="contact-lane" aria-label="Choose how to reach Michael">
           <p class="contact-lane-title">Reach Michael — pick what fits you</p>
           <div class="btn-row">
-            <a class="btn btn-outline" href="sms:+17546665509">Text Michael</a>
-            <a class="btn btn-outline" href="tel:+17546665509">Call Michael</a>
+            <a class="btn btn-outline" href="sms:+17546665509"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Text Michael</a>
+            <a class="btn btn-outline" href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Michael</a>
             <a class="btn btn-outline" href="https://michaelscomputerrepair.simplybook.me/v2/#book" target="_blank" rel="noopener noreferrer">Book a Time</a>
-            <a class="btn btn-form" href="contact.html">Contact Us (message form)</a>
+            <a class="btn btn-form" href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us (message form)</a>
           </div>
-        </div>
-        <div class="btn-row" style="margin-top:16px">
-          <a class="btn btn-outline" href="#on-site">On-site</a>
         </div>
       </div>
     </section>
@@ -80,9 +79,9 @@
       <div class="container inner">
         <p>Ready to describe your issue? Call or text now, book a time, or send a message if you prefer the form.</p>
         <div class="btn-row">
-          <a class="btn btn-outline" href="tel:+17546665509">Call</a>
-          <a class="btn btn-outline" href="sms:+17546665509">Text</a>
-          <a class="btn btn-form" href="contact.html">Contact Us</a>
+          <a class="btn btn-outline" href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+          <a class="btn btn-outline" href="sms:+17546665509"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Text</a>
+          <a class="btn btn-form" href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
         </div>
       </div>
     </section>
@@ -97,10 +96,10 @@
           <li><p>Text for a slow PC, virus, or file move — remote from $75. Quote first.</p></li>
         </ol>
         <div class="btn-row" style="margin-top:24px">
-          <a class="btn btn-outline" href="sms:+17546665509">Text Michael</a>
-          <a class="btn btn-outline" href="tel:+17546665509">Call Michael</a>
+          <a class="btn btn-outline" href="sms:+17546665509"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Text Michael</a>
+          <a class="btn btn-outline" href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Michael</a>
           <a class="btn btn-outline" href="https://michaelscomputerrepair.simplybook.me/v2/#book" target="_blank" rel="noopener noreferrer">Book a Time</a>
-          <a class="btn btn-form" href="contact.html">Contact Us</a>
+          <a class="btn btn-form" href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
         </div>
       </div>
     </section>
@@ -110,8 +109,8 @@
         <h2>Serving Davie and nearby communities</h2>
         <p style="color:var(--muted);max-width:40rem">Based in Davie by appointment. Check your city below; call or text if you're not sure whether your address is covered.</p>
         <div class="btn-row" style="margin-top:20px">
-          <a class="btn btn-primary" href="tel:+17546665509">Call Michael</a>
-          <a class="btn btn-form" href="contact.html">Contact Us</a>
+          <a class="btn btn-primary" href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Michael</a>
+          <a class="btn btn-form" href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
         </div>
       </div>
     </section>
@@ -123,9 +122,9 @@
         <p style="color:var(--muted);max-width:42rem">I come to you. Your staff can stay in the room. Files stay on your computer. I don't copy them to mine, and the machine doesn't leave unless you write yes on the work order.</p>
         <div class="btn-row" style="margin-top:24px">
           <a class="btn btn-primary" href="https://michaelscomputerrepair.simplybook.me/v2/#book" target="_blank" rel="noopener noreferrer">Book an on-site visit</a>
-          <a class="btn btn-outline" href="tel:+17546665509">Call Michael</a>
-          <a class="btn btn-outline" href="sms:+17546665509">Text Michael</a>
-          <a class="btn btn-form" href="contact.html">Contact Us</a>
+          <a class="btn btn-outline" href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Michael</a>
+          <a class="btn btn-outline" href="sms:+17546665509"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Text Michael</a>
+          <a class="btn btn-form" href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
         </div>
       </div>
     </section>
@@ -145,11 +144,11 @@
           <h2>You explain the problem.<br>We'll start there.</h2>
           <a class="big-phone" href="tel:+17546665509">(754) 666-5509</a>
           <div class="btn-row">
-            <a class="btn btn-primary" href="tel:+17546665509">Call Michael</a>
-            <a class="btn btn-outline" href="sms:+17546665509">Text Michael</a>
+            <a class="btn btn-primary" href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Michael</a>
+            <a class="btn btn-outline" href="sms:+17546665509"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Text Michael</a>
             <a class="btn btn-outline" href="https://michaelscomputerrepair.simplybook.me/v2/#book" target="_blank" rel="noopener noreferrer">Book a Time</a>
-            <a class="btn btn-form" href="contact.html">Contact Us (form)</a>
-            <a class="btn btn-outline" href="https://wa.me/17546665509" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-form" href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us (form)</a>
+            <a class="btn btn-outline" href="https://wa.me/17546665509" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
           </div>
         </div>
         <aside>
@@ -165,17 +164,17 @@
   <footer class="site-footer">
     <div class="container">
       <p>Michael's Computer Repair Service</p>
-      <a href="contact.html">Contact Us</a>
+      <a href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
       <a href="https://michaelscomputerrepair.simplybook.me/v2/#book" target="_blank" rel="noopener noreferrer">Book a Drop-Off Time</a>
-      <a href="https://wa.me/17546665509" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="https://wa.me/17546665509" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
       <p>© 2026 · Layout prototype</p>
     </div>
   </footer>
 
   <nav class="sticky-contact" aria-label="Quick contact">
-    <a href="tel:+17546665509">Call</a>
-    <a href="sms:+17546665509">Text</a>
-    <a href="contact.html">Contact Us</a>
+    <a href="tel:+17546665509"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
+    <a href="sms:+17546665509"><i class="fa-solid fa-comment-sms" aria-hidden="true"></i> Text</a>
+    <a href="contact.html"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contact Us</a>
   </nav>
 </body>
 </html>
