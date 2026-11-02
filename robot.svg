@@ -32,7 +32,7 @@
 <!-- body -->
 <rect x="136" y="420" width="290" height="225" rx="32" fill="#298798"/>
 <rect x="171" y="450" width="220" height="165" rx="18" fill="#202B3D"/>
-<path d="M216 580 V485 H246 L281 530 L316 485 H346 V580 H318 V532 L281 578 L244 532 V580 Z" fill="#41D8D7"/>
+<g fill="none" stroke="#41D8D7" stroke-linecap="round" stroke-linejoin="round"><path stroke-width="5" d="M216 580V485h30l35 45 35-45h30v95H318V532l-37 46-37-46V580H216Z"/><path stroke-width="2.2" d="M222 494v70M226 494v68M230 494v64M234 494v28l32 35M286 539l-34 32M308 494v28l-32 35M312 494v64M316 494v68M320 494v70"/><path stroke-width="2.2" d="M222 494h10M226 494h8M312 494h8M316 494h10M234 522h10M304 522h10M252 494h16M288 494h16"/><circle cx="341" cy="487" r="7.5" stroke-width="2.2"/><circle cx="341" cy="487" r="2.3" fill="#41D8D7" stroke="none"/><circle cx="220" cy="494" r="3.2" fill="#41D8D7" stroke="none"/><circle cx="226" cy="551" r="3.2" fill="#41D8D7" stroke="none"/><circle cx="281" cy="528" r="3.2" fill="#41D8D7" stroke="none"/><circle cx="334" cy="562" r="3.2" fill="#41D8D7" stroke="none"/></g>
 <!-- boots -->
 <rect x="160" y="698" width="104" height="58" rx="22" fill="#FFFFFF"/>
 <rect x="298" y="698" width="104" height="58" rx="22" fill="#FFFFFF"/>
