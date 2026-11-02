@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 980" width="840" height="980" role="img" aria-labelledby="nd-title nd-desc">
   <title id="nd-title">How the shop bots and the trading app connect</title>
-  <desc id="nd-desc">Remote devices including an iPad, Dell laptop, and phone access bots hosted locally on Ryzenator through Tailscale. Michael and Byron retain dashboard access and SSH for approved changes. Ryzenator hosts all shop bots, the Bitcoin trading app, and the Codex workspace. Local bots use the same connected services; the app communicates directly with Kalshi. Plexbeast remains on the home LAN.</desc>
+  <desc id="nd-desc">Remote devices including an iPad, Dell laptop, and phone access bots hosted locally on a home server through a secure private network. Michael and Byron retain dashboard access and approved remote access for changes. The home server hosts all shop bots, the Bitcoin trading app, and the Codex workspace. Local bots use the same connected services; the app communicates with a prediction-market API. Plexbeast remains on the home LAN.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#0a0a0f"/><stop offset="1" stop-color="#1a1a24"/>
@@ -28,19 +28,19 @@
 
   <!-- Header -->
   <text class="eb" x="28" y="40">NETWORK MAP</text>
-  <text class="h" x="28" y="66" font-size="20">Shop bots &amp; Ryzenator trading</text>
+  <text class="h" x="28" y="66" font-size="20">Shop bots &amp; home-server trading</text>
 
 
   <rect x="28" y="96" width="360" height="152" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.7"/>
   <text class="h" x="48" y="126" font-size="16">Remote devices</text>
-  <text class="t" x="48" y="148" font-size="11.5">Access the bots hosted locally on Ryzenator</text>
+  <text class="t" x="48" y="148" font-size="11.5">Access the bots hosted locally on the home server</text>
   <rect x="48" y="168" width="92" height="30" rx="8" class="chip"/>
   <text class="chipt" x="94" y="187" text-anchor="middle">iPad</text>
   <rect x="150" y="168" width="112" height="30" rx="8" class="chip"/>
   <text class="chipt" x="206" y="187" text-anchor="middle">Dell laptop</text>
   <rect x="272" y="168" width="96" height="30" rx="8" class="chip"/>
   <text class="chipt" x="320" y="187" text-anchor="middle">Phone</text>
-  <text class="t" x="48" y="226" font-size="11">Remote interface · processing stays on Ryzenator</text>
+  <text class="t" x="48" y="226" font-size="11">Remote interface · processing stays on the home server</text>
   <!-- Connected services -->
   <rect x="440" y="96" width="372" height="152" rx="16" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.22)" stroke-dasharray="5 5"/>
   <text class="eb" x="460" y="124">CONNECTED SERVICES</text>
@@ -56,34 +56,34 @@
 
 
   <path d="M200 253 V310 H222 V554 H230" fill="none" stroke="#41D8D7" stroke-width="1.6" marker-start="url(#arT)" marker-end="url(#arT)"/>
-  <text class="lbl" x="28" y="274" fill="#41D8D7">Remote access via Tailscale</text>
+  <text class="lbl" x="28" y="274" fill="#41D8D7">Remote access via secure private network</text>
   <text class="t" x="28" y="293" font-size="11">Connect to the local bots</text>
   <path d="M812 172 H826 V754 H790" fill="none" stroke="#a1a1aa" stroke-width="1.6" marker-start="url(#arG)" marker-end="url(#arG)"/>
   <text class="lbl" x="793" y="286" text-anchor="end" fill="#a1a1aa">Local bots ↔ connected service APIs</text>
   <!-- Private network boundary -->
   <rect x="210" y="326" width="602" height="616" rx="20" fill="rgba(65,216,215,0.04)" stroke="#41D8D7" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="7 6"/>
-  <text class="eb" x="236" y="352">TAILSCALE MESH · PRIVATE ACCESS</text>
+  <text class="eb" x="236" y="352">SECURE PRIVATE NETWORK · REMOTE ACCESS</text>
 
   <!-- Human access endpoints -->
   <rect x="236" y="378" width="254" height="86" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.6"/>
   <text class="h" x="254" y="405" font-size="15">Michael</text>
-  <text class="t" x="254" y="426" font-size="11.5">Dashboard + SSH access</text>
+  <text class="t" x="254" y="426" font-size="11.5">Dashboard + approved remote access</text>
   <text class="t" x="254" y="446" font-size="11">App changes as approved</text>
   <rect x="530" y="378" width="254" height="86" rx="16" class="card" style="stroke:#41D8D7;stroke-opacity:.6"/>
   <text class="h" x="548" y="405" font-size="15">Byron</text>
-  <text class="t" x="548" y="426" font-size="11.5">Dashboard + SSH access</text>
+  <text class="t" x="548" y="426" font-size="11.5">Dashboard + approved remote access</text>
   <text class="t" x="548" y="446" font-size="11">App changes as approved</text>
 
   <path d="M290 469 V515" stroke="#41D8D7" stroke-width="1.6" marker-start="url(#arT)" marker-end="url(#arT)"/><path d="M584 469 V515" stroke="#41D8D7" stroke-width="1.6" marker-start="url(#arT)" marker-end="url(#arT)"/>
   <path d="M437 469 V515" stroke="#a78bfa" stroke-width="1.6" marker-end="url(#arP)"/><path d="M731 469 V515" stroke="#a78bfa" stroke-width="1.6" marker-end="url(#arP)"/>
   <text class="lbl" x="305" y="491" fill="#41D8D7">Dashboard</text>
-  <text class="lbl" x="448" y="505" fill="#c4b5fd">SSH</text>
+  <text class="lbl" x="448" y="505" fill="#c4b5fd">Remote</text>
   <text class="lbl" x="599" y="491" fill="#41D8D7">Dashboard</text>
-  <text class="lbl" x="742" y="505" fill="#c4b5fd">SSH</text>
+  <text class="lbl" x="742" y="505" fill="#c4b5fd">Remote</text>
 
   <!-- Local hosting and execution -->
   <rect x="236" y="520" width="548" height="282" rx="16" class="card" style="stroke:#a78bfa;stroke-opacity:.8"/>
-  <text class="h" x="254" y="550" font-size="17">Ryzenator</text>
+  <text class="h" x="254" y="550" font-size="17">Home server</text>
   <text class="t" x="254" y="571" font-size="11.5">Home workstation · Linux · local bots + all trade processing</text>
   <rect x="254" y="587" width="512" height="49" rx="8" class="chip"/>
   <text class="chipt" x="270" y="608" style="font-weight:700">15-minute Bitcoin trading app</text>
@@ -91,12 +91,12 @@
   <rect x="254" y="650" width="250" height="47" rx="8" fill="#1b1b28" stroke="#4b4b60"/>
   <text class="chipt" x="270" y="669">Codex workspace</text>
   <text class="t" x="270" y="686" font-size="10.5">Develop + apply approved changes</text>
-  <text class="t" x="523" y="667" font-size="11">SSH tunnel → maintenance</text>
-  <text class="t" x="523" y="687" font-size="11">Tailscale → dashboard access</text>
+  <text class="t" x="523" y="667" font-size="11">Secure tunnel → maintenance</text>
+  <text class="t" x="523" y="687" font-size="11">Private network → dashboard access</text>
 
-  <!-- Kalshi is external to the tailnet -->
+  <!-- External prediction-market API -->
   <rect x="28" y="568" width="160" height="91" rx="14" class="card"/>
-  <text class="h" x="44" y="595" font-size="15">Kalshi</text>
+  <text class="h" x="44" y="595" font-size="15">Prediction market</text>
   <text class="t" x="44" y="616" font-size="11">Market data + orders</text>
   <text class="t" x="44" y="636" font-size="11">Fills + trade status</text>
   <line x1="194" y1="612" x2="230" y2="612" stroke="#a1a1aa" stroke-width="1.6" marker-start="url(#arG)" marker-end="url(#arG)"/>
@@ -116,8 +116,8 @@
 
   <g transform="translate(530,854)" class="t" font-size="11">
     <line x1="0" y1="6" x2="22" y2="6" stroke="#41D8D7" stroke-width="2"/><text x="32" y="10">Private dashboard connection</text>
-    <line x1="0" y1="28" x2="22" y2="28" stroke="#a78bfa" stroke-width="2"/><text x="32" y="32">Approved SSH changes</text>
+    <line x1="0" y1="28" x2="22" y2="28" stroke="#a78bfa" stroke-width="2"/><text x="32" y="32">Approved remote changes</text>
     <line x1="0" y1="50" x2="22" y2="50" stroke="#a1a1aa" stroke-width="2"/><text x="32" y="54">External API traffic</text>
   </g>
-  <text class="t" x="28" y="964" font-size="11">Bots and trading run locally on Ryzenator; remote devices provide access.</text>
+  <text class="t" x="28" y="964" font-size="11">Bots and trading run locally on the home server; remote devices provide access.</text>
 </svg>
