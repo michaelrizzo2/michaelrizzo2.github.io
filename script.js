@@ -4,7 +4,7 @@ repair:{title:'Repair intake → reviewed next step',slug:'ai-repair-shop-operat
 listings:{title:'Evidence + full cost assumptions',slug:'ai-listing-scorer',label:'Evidence filter',options:[['all','Compare all listings'],['tested_only','Complete evidence only'],['missing_evidence','Incomplete evidence']],weight:'Listing score mix (target vs. condition)',value:50,steps:'Select a target and edit the cost assumptions. A high score does not override missing evidence.'}
 };
 const $=id=>document.getElementById(id);let active='repair',proposalVersion=0,sessionToken=null,sessionExpires=0,recorded=null,liveAvailable=false,dataReady=false,dataLoadError=null;
-const API=location.hostname==='127.0.0.1'||location.hostname==='localhost'?'http://127.0.0.1:8021':location.origin;
+const API=location.hostname==='127.0.0.1'||location.hostname==='localhost'?'http://127.0.0.1:8021':'https://ryzenator-ms7c56.tailf4551d.ts.net:10000';
 function el(tag,text,cls){const n=document.createElement(tag);if(text!=null)n.textContent=text;if(cls)n.className=cls;return n;}
 function money(cents){return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(cents/100);}
 function metric(parent,label,value){const m=el('div',null,'demo-metric');m.append(el('strong',value),el('span',label));parent.append(m);}
