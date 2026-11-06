@@ -1,0 +1,18 @@
+# Secrets & credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+token.json
+*secret*.json
+
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+*.swp
+*~
+node_modules/
